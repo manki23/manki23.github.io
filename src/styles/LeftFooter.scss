@@ -1,10 +1,17 @@
 .left-footer {
     position: absolute;
     margin-left: 2vw;
-    margin-top: 80vh;
+    margin-top: 71vh;
+    min-height: 25vh;
+    display: inline-block;
   }
 
 .left-footer-icon:hover {
     color :#40a296;
 }
-  
+
+.left-line {
+  display: inline-block;
+  min-height: 18vh;
+  border-right: 1px solid white;
+}

@@ -6,6 +6,7 @@
   color: white;
 }
 
-a:visited {
-  color: white;
+a {
+  color: inherit;
+  text-decoration: none;
 }

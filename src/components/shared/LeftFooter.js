@@ -23,6 +23,7 @@ const LeftFooter = () => {
           <FiLinkedin />
         </a>
       </p>
+      <span className="left-line"></span>
     </div>
   );
 };

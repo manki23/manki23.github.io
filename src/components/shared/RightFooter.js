@@ -3,10 +3,15 @@ import "../../styles/RightFooter.scss";
 
 const RightFooter = () => {
   return (
-    <div className="right-footer">
-      <p className="right-footer-email">
-        <a href="mailto:myriam.anki.pro@gmail.com">myriam.anki.pro@gmail.com</a>
-      </p>
+    <div>
+      <div className="right-footer">
+        <p className="right-footer-email">
+          <a href="mailto:myriam.anki.pro@gmail.com">
+            myriam.anki.pro@gmail.com
+          </a>
+          <span className="right-line"></span>
+        </p>
+      </div>
     </div>
   );
 };
