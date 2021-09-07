@@ -1,11 +1,11 @@
 import React from 'react'
-// import '../../styles/GreenButton.scss'
+import '../../styles/GreenButton.scss'
 
 const GreenButton = ({title = "Button", onClick}) => {
     return (
-      <button className="green-button" onClick={onClick}>
+      <a className="green-button" onClick={onClick}>
           {title}
-      </button>
+      </a>
     );
   };
   

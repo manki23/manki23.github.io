@@ -19,6 +19,9 @@
 
 .header-button:hover {
     border: 2px dashed $appGreenColor;
+    box-sizing: border-box;
     cursor: pointer;
-    color: $appGreenColor;
+    div {
+        color: $appGreenColor;
+    }
 }

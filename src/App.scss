@@ -1,4 +1,5 @@
 $appGreenColor: #40a296;
+$appGreenTextBackgroundColor: #133141;
 $appBackgroundColor: #0a182f;
 $appTextColor: white;
 
@@ -8,6 +9,7 @@ $appTextColor: white;
 
 .App {
   color: $appTextColor;
+  margin: 10px;
 }
 
 a {

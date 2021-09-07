@@ -3,10 +3,10 @@ import '../../styles/Header.scss'
 import GreenButton from './GreenButton';
 import HeaderButton from './HeaderButton';
 
-
 const btnCallback = (txt) => {
     console.log(txt);
 }
+
 const Header = () => {
     return (
       <header className="header-class">
