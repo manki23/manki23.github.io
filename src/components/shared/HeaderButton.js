@@ -1,16 +1,16 @@
 import React from "react";
-// import "../../styles/HeaderButton.scss";
+import "../../styles/HeaderButton.scss";
 
-const HeaderButton = (
+const HeaderButton = ({
   title = "Button",
-  onClick = () => {},
+  onClick,
   number = "00."
-) => {
+}) => {
   return (
-    <button className="header-button" onClick={onClick}>
+    <a className="header-button" onClick={onClick}>
       <div className="btn-number">{number}</div>
-      <div>{title}</div>
-    </button>
+      <div className="btn-title">{title}</div>
+    </a>
   );
 };
 

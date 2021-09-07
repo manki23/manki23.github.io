@@ -1,0 +1,24 @@
+@import '../App.scss';
+
+.header-button {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    font-size: 1em;
+    margin: 10px;
+}
+
+.btn-number {
+    margin-right: 0.5em;
+    color: $appGreenColor;
+}
+
+.btn-title {
+    color: $appTextColor;
+}
+
+.header-button:hover {
+    border: 2px dashed $appGreenColor;
+    cursor: pointer;
+    color: $appGreenColor;
+}

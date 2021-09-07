@@ -1,3 +1,5 @@
+@import '../App.scss';
+
 .left-footer {
     position: absolute;
     margin-left: 2vw;
@@ -7,11 +9,11 @@
   }
 
 .left-footer-icon:hover {
-    color :#40a296;
+    color: $appGreenColor;
 }
 
 .left-line {
   display: inline-block;
   min-height: 18vh;
-  border-right: 1px solid white;
+  border-right: 1px solid $appTextColor;
 }
