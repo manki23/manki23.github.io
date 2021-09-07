@@ -7,7 +7,7 @@ const HeaderButton = ({
   number = "00."
 }) => {
   return (
-    <a className="header-button" onClick={onClick}>
+    <a className="header-button" onClick={onClick} href="#">
       <div className="btn-number">{number}</div>
       <div className="btn-title">{title}</div>
     </a>

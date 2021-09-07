@@ -1,11 +1,13 @@
 @import '../App.scss';
 
+$headerMargin: 10px;
+
 .header-button {
     display: flex;
     justify-content: center;
     padding: 10px;
     font-size: 1em;
-    margin: 10px;
+    margin: $headerMargin;
 }
 
 .btn-number {
@@ -19,7 +21,7 @@
 
 .header-button:hover {
     border: 2px dashed $appGreenColor;
-    box-sizing: border-box;
+    margin: ($headerMargin - 2px);
     cursor: pointer;
     div {
         color: $appGreenColor;

@@ -3,7 +3,7 @@ import '../../styles/GreenButton.scss'
 
 const GreenButton = ({title = "Button", onClick}) => {
     return (
-      <a className="green-button" onClick={onClick}>
+      <a className="green-button" onClick={onClick} href="#">
           {title}
       </a>
     );
