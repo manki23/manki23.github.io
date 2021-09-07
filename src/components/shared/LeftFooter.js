@@ -1,5 +1,6 @@
 import React from "react";
 import { FiGithub, FiLinkedin } from "react-icons/fi";
+import { FaRegEnvelope } from "react-icons/fa";
 import "../../styles/LeftFooter.scss";
 
 const LeftFooter = () => {
@@ -21,6 +22,15 @@ const LeftFooter = () => {
           className="left-footer-icon"
         >
           <FiLinkedin />
+        </a>
+      </p>
+      <p>
+        <a
+          href="mailto:myriam.anki.pro@gmail.com"
+          target="_blank"
+          className="left-footer-icon"
+        >
+          <FaRegEnvelope />
         </a>
       </p>
       <span className="left-line"></span>

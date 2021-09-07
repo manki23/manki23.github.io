@@ -3,11 +3,11 @@ import React from "react";
 
 const HeaderButton = (
   title = "Button",
-  callback = () => {},
+  onClick = () => {},
   number = "00."
 ) => {
   return (
-    <button className="header-button" onClick={callback}>
+    <button className="header-button" onClick={onClick}>
       <div className="btn-number">{number}</div>
       <div>{title}</div>
     </button>
