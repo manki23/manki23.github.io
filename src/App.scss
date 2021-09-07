@@ -1,0 +1,16 @@
+$appGreenColor: #40a296;
+$appBackgroundColor: #0a182f;
+$appTextColor: white;
+
+* {
+  background-color: $appBackgroundColor;
+}
+
+.App {
+  color: $appTextColor;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
