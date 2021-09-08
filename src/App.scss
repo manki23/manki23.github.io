@@ -1,10 +1,18 @@
-$appGreenColor: #40a296;
 $appGreenTextBackgroundColor: #133141;
-$appBackgroundColor: #0a182f;
-$appTextColor: white;
+
+$appNavyColor: #0a192f;
+$appLightNavyColor: #112240;
+$appLightestNavyColor: #233554;
+$appSlateColor: #8892b0;
+$appLightSlateColor: #a8b2d1;
+$appLightestSlateColor: #ccd6f6;
+$appWhiteColor: #e6f1ff;
+$appGreenColor: #64ffda;
+
+$appTextColor: $appWhiteColor;
 
 * {
-  background-color: $appBackgroundColor;
+  background-color: $appNavyColor;
 }
 
 .App {

@@ -6,29 +6,29 @@ import "../../styles/LeftFooter.scss";
 const LeftFooter = () => {
   return (
     <div className="left-footer">
-      <p>
+      <p className="left-footer-icon">
         <a
           href="https://github.com/manki23"
           target="_blank"
-          className="left-footer-icon"
+          title="GitHub"
         >
           <FiGithub />
         </a>
       </p>
-      <p>
+      <p className="left-footer-icon">
         <a
           href="https://www.linkedin.com/in/myriam-anki-8b9258198/"
           target="_blank"
-          className="left-footer-icon"
+          title="LinkedIn"
         >
           <FiLinkedin />
         </a>
       </p>
-      <p>
+      <p className="left-footer-icon">
         <a
           href="mailto:myriam.anki.pro@gmail.com"
           target="_blank"
-          className="left-footer-icon"
+          title="Mail"
         >
           <FaRegEnvelope />
         </a>

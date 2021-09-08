@@ -9,13 +9,17 @@
 
 .left-footer-icon:hover {
     color: $appGreenColor;
-    padding-bottom: 20px !important;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
+    margin-top: -6px;
+}
+
+.left-footer-icon {
+  font-size: 1.2em;
 }
 
 .left-line {
   display: inline-block;
-  margin-left: 0.4em;
-  min-height: 5em;
+  margin-left: 0.5em;
+  min-height: 6em;
   border-right: 1px solid $appTextColor;
 }
