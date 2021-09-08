@@ -5,7 +5,8 @@ $headerMargin: 10px;
 .header-button {
     display: flex;
     justify-content: center;
-    padding: 10px;
+    padding: 5px;
+    padding-top: 10px;
     font-size: 1em;
     margin: $headerMargin;
 }
