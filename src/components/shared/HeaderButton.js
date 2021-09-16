@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/HeaderButton.scss";
+import "../../styles/shared/HeaderButton.scss";
 
 const HeaderButton = ({
   title = "Button",

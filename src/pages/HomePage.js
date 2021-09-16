@@ -9,6 +9,9 @@ const HomePage = () => {
           </div>
           <div className="title-name">Myriam Anki.</div>
           <div className="title-whoami">I am a freelance developper.</div>
+          <div className="small-intro">
+            I am a Laravel backend developper with some frontend skills in React.
+          </div>
       </div>
     );
   };

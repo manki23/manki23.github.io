@@ -1,5 +1,5 @@
 import React from 'react'
-import '../../styles/Header.scss'
+import '../../styles/shared/Header.scss'
 import GreenButton from './GreenButton';
 import HeaderButton from './HeaderButton';
 

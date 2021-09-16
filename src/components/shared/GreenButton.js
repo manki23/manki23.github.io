@@ -1,5 +1,5 @@
 import React from 'react'
-import '../../styles/GreenButton.scss'
+import '../../styles/shared/GreenButton.scss'
 
 const GreenButton = ({title = "Button", onClick}) => {
     return (

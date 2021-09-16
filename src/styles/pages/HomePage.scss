@@ -1,21 +1,31 @@
 @import "../../App.scss";
 
 .home-page {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     .pre-title {
         color: $appGreenColor;
         font-size: 1.2em;
     }
-
+    
     .title-name {
         color: $appLightestSlateColor;
     }
-
+    
     .title-whoami {
         color: $appLightSlateColor;
     }
     
     .title-name, .title-whoami {
-        font-size: 4em;
-        font-size: bold;
+        font-size: 4.5em;
+        font-weight: bold;
+    }
+
+    .small-intro {
+        color: $appSlateColor;
+        margin-top: 20px;
+        font-size: 1.2em;
     }
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import { FiGithub, FiLinkedin } from "react-icons/fi";
 import { FaRegEnvelope } from "react-icons/fa";
-import "../../styles/LeftFooter.scss";
+import "../../styles/shared/LeftFooter.scss";
 
 const LeftFooter = () => {
   return (
