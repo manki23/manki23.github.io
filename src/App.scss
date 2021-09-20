@@ -19,6 +19,7 @@ $appTextColor: $appWhiteColor;
 }
 
 .App {
+  counter-set: headerCounter 5 h2Counter 0;
   color: $appTextColor;
   margin: 10px;
 }
@@ -40,10 +41,9 @@ p, ol, li {
 }
 
 .numbered-heading::before {
-  // position: relative;
-  bottom: 4px;
-  counter-increment: section 1;
-  content: "0" counter(section) ".";
+  position: relative;
+  counter-increment: h2Counter 1;
+  content: "0" counter(h2Counter) ".";
   margin-right: 10px;
   color: $appGreenColor;
   font-family: $fontMono;
@@ -54,7 +54,7 @@ p, ol, li {
 .numbered-heading {
   display: flex;
   align-items: center;
-  // position: relative;
+  position: relative;
   margin: 10px 0px 40px;
   width: 100%;
   font-size: 3vw;

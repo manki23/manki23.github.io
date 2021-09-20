@@ -1,9 +1,21 @@
+@import '../../App.scss';
+
 .header-class {
     display: flex;
     flex-direction: row-reverse;
     position: fixed;
     right: 0;
     margin-right: 3em;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
     font-family: monospace;
     font-size: 1.2em;
+    z-index: 2;
+    top: 0;
+    width: 100vw;
+    height: 12vh;
+    background-color: $appNavyColor;
+    opacity: 0.97;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
 }

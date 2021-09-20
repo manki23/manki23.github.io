@@ -11,10 +11,10 @@ const Header = () => {
     return (
       <header className="header-class">
           <GreenButton title="Resume" onClick={() => btnCallback("RESUME")} />
-          <HeaderButton number="04." title="Contact" onClick={() => btnCallback("CONTACT")} />
-          <HeaderButton number="03." title="Work" onClick={() => btnCallback("WORK")} />
-          <HeaderButton number="02." title="Experience" onClick={() => btnCallback("EXPERIENCE")} />
-          <HeaderButton number="01." title="About" onClick={() => btnCallback("ABOUT")} />
+          <HeaderButton title="Contact" goTo="#contact-page" />
+          <HeaderButton title="Work" goTo="#work-page" />
+          <HeaderButton title="Experience" goTo="#experience-page" />
+          <HeaderButton title="About" goTo="#about-page"/>
       </header>
     );
   };
