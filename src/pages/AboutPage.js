@@ -4,7 +4,7 @@ import img from "../assets/manki-bitmoji.png";
 
 const AboutPage = () => {
   return (
-    <div className="about-page">
+    <div className="about-page" id="about-page">
       <h2 className="numbered-heading">About me</h2>
       <div className="content">
         <div className="text-container">
@@ -20,9 +20,7 @@ const AboutPage = () => {
             cupidatat non proident, sunt in culpa qui officia deserunt mollit
             anim id est laborum."
           </p>
-          <p>
-            Here are a few technologies I’ve been working with recently:
-          </p>
+          <p>Here are a few technologies I’ve been working with recently:</p>
           <ol>
             <li>Laravel</li>
             <li>Angular Ionic</li>
@@ -30,10 +28,10 @@ const AboutPage = () => {
             <li>React</li>
           </ol>
         </div>
-        <div className="picture-container">
-          <img className="test-img" src={img} />
+          <div className="picture-container">
+            <img src={img} />
+          </div>
         </div>
-      </div>
     </div>
   );
 };

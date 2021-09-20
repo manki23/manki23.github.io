@@ -3,7 +3,7 @@ import '../styles/pages/HomePage.scss'
 
 const HomePage = () => {
     return (
-      <div className="home-page">
+      <div className="home-page" id="home-page">
           <div className="pre-title" >
               Hi, my name is
           </div>
