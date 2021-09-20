@@ -11,15 +11,6 @@ $headerMargin: 10px;
     margin: $headerMargin;
 }
 
-// .btn-number {
-//     margin-right: 0.5em;
-//     color: $appGreenColor;
-// }
-
-// .btn-title {
-//     color: $appTextColor;
-// }
-
 .header-button::before {
     counter-increment: headerCounter -1;
     content: "0" counter(headerCounter) ".";
