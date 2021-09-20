@@ -5,7 +5,7 @@ const ExperiencePage = () => {
   return (
     <div className="experience-page" id="experience-page">
       <h2 className="numbered-heading">Where I've Worked</h2>
-      <div className="content">
+      <div className="content slate-color">
         WIP: experience page will be done soon.
       </div>
     </div>
