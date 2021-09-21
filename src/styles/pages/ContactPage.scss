@@ -1,3 +1,9 @@
 .contact-page {
-    padding-top: 100px;
+    padding: 100px 0px;
+    text-align: center;
+
+    .content {
+        display: grid;
+        margin-bottom: 100px;
+    }
 }

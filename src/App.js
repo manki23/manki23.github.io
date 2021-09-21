@@ -2,7 +2,8 @@ import './App.scss';
 import LeftFooter from './components/shared/LeftFooter';
 import Header from './components/shared/Header';
 import Logo from './components/shared/Logo';
-import Main from './pages/Main';
+import Main from './components/pages/Main';
+import Footer from './components/shared/Footer';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Header />
       <Main />
       <LeftFooter />
+      <Footer />
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import React from "react";
-import "../styles/pages/AboutPage.scss";
-import img from "../assets/manki-bitmoji.png";
+import "../../styles/pages/AboutPage.scss";
+import img from "../../assets/manki-bitmoji.png";
 
 const AboutPage = () => {
   return (

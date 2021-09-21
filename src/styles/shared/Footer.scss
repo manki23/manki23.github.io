@@ -1,0 +1,17 @@
+@import "../../App.scss";
+
+.footer-container {
+    bottom: 0;
+    width: 70vw;
+    margin-left: auto;
+    margin-right: auto;
+
+    p {
+        font-family: monospace;
+        text-align: center;
+        a {
+            color: $appGreenColor;
+        }
+    }
+
+}

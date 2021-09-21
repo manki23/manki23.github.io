@@ -1,10 +1,11 @@
 @import "../../App.scss";
 
 .about-page {
-  padding-top: 100px;
+  padding: 100px 0px;
 
   .content {
     display: grid;
+    font-size: 0.8em;
     grid-template-columns: 2fr 1fr;
     gap: 50px;
     // flex-wrap: wrap;

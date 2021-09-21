@@ -1,5 +1,5 @@
-import React from "react";
-import "../styles/pages/WorkPage.scss";
+import React from 'react';
+import '../../styles/pages/WorkPage.scss';
 
 const WorkPage = () => {
   return (

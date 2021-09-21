@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/pages/Main.scss'
+import '../../styles/pages/Main.scss'
 import AboutPage from './AboutPage';
 import HomePage from './HomePage';
 import ExperiencePage from './ExperiencePage'

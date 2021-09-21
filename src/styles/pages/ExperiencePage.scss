@@ -1,3 +1,81 @@
+@import "../../App.scss";
+
 .experience-page {
-    padding-top: 100px;
+  padding: 100px 0px;
+  //   margin: 0px 87px;
+  margin-left: 87px;
+  .content {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    .job-tabs {
+      button {
+        max-width: 90px;
+        height: 42px;
+        min-width: 100%;
+        // text-decoration: none;
+        // text-decoration-skip-ink: auto;
+        // position: relative;
+        transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        // padding: 0px 20px 2px;
+        border-left: 2px solid $appLightestNavyColor;
+        background-color: transparent;
+        color: $appSlateColor;
+        font-family: monospace;
+        font-size: 13px;
+        text-align: left;
+        // white-space: nowrap;
+        padding: 10px;
+
+        cursor: pointer;
+        border: 0px;
+        border-radius: 0px;
+        border-left: 2px solid $appLightestNavyColor;
+      }
+
+      button:hover, .selected {
+        background-color: $appLightestNavyColor;
+        color: $appGreenColor;
+        border-left: 2px solid $appGreenColor;
+      }
+    }
+
+    .job-description {
+        padding: 10px 5px;
+      h3 {
+        margin: 0px;
+        margin-bottom: 2px;
+      }
+      p {
+        font-family: monospace;
+        font-size: 0.6em;
+        margin-top: 0px;
+        margin-bottom: 25px;
+      }
+      ul {
+        margin: 0px;
+        padding: 0px;
+        li {
+          list-style-type: none;
+          font-size: 18px;
+          position: relative;
+          padding-left: 30px;
+          margin-bottom: 10px;
+        //   display: list-item;
+        //   text-align: -webkit-match-parent;
+        }
+        li::before {
+          content: "▹";
+          position: absolute;
+          left: 0px;
+          color: $appGreenColor;
+        }
+      }
+      a {
+          color: $appGreenColor;
+      }
+    }
+  }
 }

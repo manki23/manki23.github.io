@@ -31,13 +31,24 @@ a {
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
-  line-height: 1.1;
   color: $appLightestSlateColor;
+}
+
+h2 {
+  line-height: 1.1;
+}
+
+h3 {
+  font-size: 22px;
+}
+
+div {
+  font-size: 1.1em;
 }
 
 p, ol, li {
   color: $appSlateColor;
-  font-size: 1.2em;
+  font-size: 1.1em;
 }
 
 .numbered-heading::before {
