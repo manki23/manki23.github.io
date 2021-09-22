@@ -1,0 +1,20 @@
+{
+  "short_name": "Manki Portfolio",
+  "name": "Myriam Anki Portfolio",
+  "icons": [
+    {
+      "src": "manki-bitmoji.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "manki-bitmoji.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

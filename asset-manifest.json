@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/react-portfolio/static/css/main.c70678de.chunk.css",
+    "main.js": "/react-portfolio/static/js/main.d54b1f73.chunk.js",
+    "main.js.map": "/react-portfolio/static/js/main.d54b1f73.chunk.js.map",
+    "runtime-main.js": "/react-portfolio/static/js/runtime-main.2729a8fb.js",
+    "runtime-main.js.map": "/react-portfolio/static/js/runtime-main.2729a8fb.js.map",
+    "static/js/2.1d335e81.chunk.js": "/react-portfolio/static/js/2.1d335e81.chunk.js",
+    "static/js/2.1d335e81.chunk.js.map": "/react-portfolio/static/js/2.1d335e81.chunk.js.map",
+    "static/js/3.c29808d6.chunk.js": "/react-portfolio/static/js/3.c29808d6.chunk.js",
+    "static/js/3.c29808d6.chunk.js.map": "/react-portfolio/static/js/3.c29808d6.chunk.js.map",
+    "index.html": "/react-portfolio/index.html",
+    "static/css/main.c70678de.chunk.css.map": "/react-portfolio/static/css/main.c70678de.chunk.css.map",
+    "static/js/2.1d335e81.chunk.js.LICENSE.txt": "/react-portfolio/static/js/2.1d335e81.chunk.js.LICENSE.txt",
+    "static/media/manki-bitmoji.719084e1.png": "/react-portfolio/static/media/manki-bitmoji.719084e1.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2729a8fb.js",
+    "static/js/2.1d335e81.chunk.js",
+    "static/css/main.c70678de.chunk.css",
+    "static/js/main.d54b1f73.chunk.js"
+  ]
+}
