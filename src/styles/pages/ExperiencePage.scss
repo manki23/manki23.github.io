@@ -2,7 +2,6 @@
 
 .experience-page {
   padding: 100px 0px;
-  //   margin: 0px 87px;
   margin-left: 87px;
   .content {
     display: grid;
@@ -12,21 +11,16 @@
         max-width: 90px;
         height: 42px;
         min-width: 100%;
-        // text-decoration: none;
-        // text-decoration-skip-ink: auto;
-        // position: relative;
         transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
         display: flex;
         -webkit-box-align: center;
         align-items: center;
-        // padding: 0px 20px 2px;
         border-left: 2px solid $appLightestNavyColor;
         background-color: transparent;
         color: $appSlateColor;
         font-family: monospace;
         font-size: 13px;
         text-align: left;
-        // white-space: nowrap;
         padding: 10px;
 
         cursor: pointer;
@@ -36,9 +30,12 @@
       }
 
       button:hover, .selected {
-        background-color: $appLightestNavyColor;
         color: $appGreenColor;
         border-left: 2px solid $appGreenColor;
+      }
+      
+      button:hover {
+        background-color: $appLightestNavyColor;
       }
     }
 
@@ -63,8 +60,6 @@
           position: relative;
           padding-left: 30px;
           margin-bottom: 10px;
-        //   display: list-item;
-        //   text-align: -webkit-match-parent;
         }
         li::before {
           content: "▹";

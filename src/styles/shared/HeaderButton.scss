@@ -9,6 +9,7 @@ $headerMargin: 10px;
     padding-top: 10px;
     font-size: 1em;
     margin: $headerMargin;
+    transition: none;
 }
 
 .header-button::before {
@@ -21,8 +22,5 @@ $headerMargin: 10px;
 .header-button:hover {
     border: 2px dashed $appGreenColor;
     margin: ($headerMargin - 2px);
-    cursor: pointer;
-    div {
-        color: $appGreenColor;
-    }
+    color: $appGreenColor;
 }

@@ -1,25 +1,28 @@
 @import '../../App.scss';
 
 .left-footer {
-    margin-left: 2em;
-    position: fixed;
+  position: fixed;
+    left: 40px;
     bottom: 0;
-    display: inline-block;
   }
 
 .left-footer-icon:hover {
     color: $appGreenColor;
-    margin-bottom: 25px;
-    margin-top: -6px;
 }
 
 .left-footer-icon {
-  font-size: 1.2em;
+  font-size: 23px;
+  margin: 20px 0px;
+}
+
+.left-footer-icon:active {
+  outline: 2px dashed $appGreenColor;
+  outline-offset: 6px;
 }
 
 .left-line {
   display: inline-block;
   margin-left: 0.5em;
   min-height: 6em;
-  border-right: 1px solid $appTextColor;
+  border-right: 1px solid $appSlateColor;
 }
