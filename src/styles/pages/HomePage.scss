@@ -7,7 +7,7 @@
     justify-content: center;
     .pre-title {
         color: $appGreenColor;
-        font-size: 1.2em;
+        font-size: 20px;
     }
     
     .title-name {
@@ -19,13 +19,13 @@
     }
     
     .title-name, .title-whoami {
-        font-size: 80px;
+        font-size: 70px;
         font-weight: bold;
     }
 
     .small-intro {
         color: $appSlateColor;
         margin-top: 20px;
-        font-size: 1.2em;
+        font-size: 20px;
     }
 }
