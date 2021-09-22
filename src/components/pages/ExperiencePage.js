@@ -18,7 +18,7 @@ const JobContent = ({
       <h3>
         {title}{" "}
         <a href={companyLink} target="_blank">
-          @{companyName}
+          @ {companyName}
         </a>
       </h3>
       <p>{timeframe}</p>
