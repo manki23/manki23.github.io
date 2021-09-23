@@ -1,18 +1,20 @@
 import React from "react";
+import styled from "styled-components";
 import logo from "../../assets/manki-bitmoji.png";
 
-const logoStyle = {
-  position: "fixed",
-  height: "5.9em",
-  zIndex: 3,
-};
+const StyledLogo = styled.a`
+  img {
+    position: fixed;
+    height: 5.9em;
+    z-index: 3;
+  }
+`;
 
 const Logo = () => {
   return (
-    <a href="#">
-      {" "}
-      <img className="logo-svg" src={logo} style={logoStyle} />{" "}
-    </a>
+    <StyledLogo href="#">
+      <img src={logo} />
+    </StyledLogo>
   );
 };
 
