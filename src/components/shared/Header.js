@@ -1,5 +1,5 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
 import GreenButton from './GreenButton';
 import HeaderButton from './HeaderButton';
 import cv from '../../assets/CV_2021-09-22_Myriam_Anki.pdf';
@@ -18,9 +18,9 @@ const StyledHeader = styled.header`
     top: 0;
     width: 100vw;
     height: 80px;
-    background-color: $appNavyColor;
+    background-color: ${(props) => props.theme.colors.appNavyColor};
     opacity: 0.97;
-`
+`;
 
 const Header = () => {
     return (
