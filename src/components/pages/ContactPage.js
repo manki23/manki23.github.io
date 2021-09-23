@@ -1,20 +1,28 @@
 import React from "react";
-import "../../styles/pages/ContactPage.scss";
+import styled from "styled-components";
 import { BiLinkExternal } from "react-icons/bi";
 import { FaRegEnvelope } from "react-icons/fa";
 import GreenButton from "../shared/GreenButton";
 
+const StyledContactPage = styled.div`
+    padding: 100px 0px;
+    text-align: center;
+    div {
+        display: grid;
+    }
+`
+
 const ContactPage = () => {
   return (
-    <div className="contact-page" id="contact-page">
-      <h2 className="numbered-heading">Get in touch</h2>
-      <div className="content slate-color">
+    <StyledContactPage id="contact-page">
+      <h2>Get in touch</h2>
+      <div>
         <p>
           I a currently open to work, you have a project in mind or just want to
           say hi ?
         </p>
         <p>Feel free to send me a message !</p>
-        <p className="buttons">
+        <p>
           <GreenButton
             title={
               <>
@@ -33,7 +41,7 @@ const ContactPage = () => {
           />
         </p>
       </div>
-    </div>
+    </StyledContactPage>
   );
 };
 
