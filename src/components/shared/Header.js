@@ -24,7 +24,6 @@ const StyledHeader = styled.header`
 
 const Header = () => {
     return (
-      // <header className="header-class">
       <StyledHeader>
           <GreenButton title="Resume" href={cv} />
           <HeaderButton title="Contact" goTo="#contact-page" />
