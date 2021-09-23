@@ -11,7 +11,7 @@ const StyledFooter = styled.footer`
     font-family: monospace;
     text-align: center;
     a {
-      color: $appGreenColor;
+      color: ${(props) => props.theme.colors.appGreenColor};
     }
   }
 `;
