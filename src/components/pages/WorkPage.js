@@ -1,11 +1,15 @@
 import React from 'react';
-import '../../styles/pages/WorkPage.scss';
+import styled from "styled-components";
+
+const StyledWorkPage = styled.div`
+  padding: 100px 0px;
+`
 
 const WorkPage = () => {
   return (
-    <div className="work-page" id="work-page">
-      <h2 className="numbered-heading">Some Things I've Built</h2>
-      <div className="content slate-color">
+    <div id="work-page">
+      <h2>Some Things I've Built</h2>
+      <div>
         WIP: work page will be done soon.
       </div>
     </div>
