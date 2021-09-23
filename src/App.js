@@ -65,7 +65,7 @@ const StyledApp = styled.div`
     font-size: 1.1em;
   }
 
-  .numbered-heading::before {
+  h2::before {
     position: relative;
     counter-increment: h2Counter 1;
     content: "0" counter(h2Counter) ".";
@@ -76,7 +76,7 @@ const StyledApp = styled.div`
     font-weight: 400;
   }
 
-  .numbered-heading {
+  h2 {
     display: flex;
     align-items: center;
     position: relative;

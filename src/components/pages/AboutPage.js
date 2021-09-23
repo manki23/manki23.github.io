@@ -1,11 +1,44 @@
 import React from "react";
-import "../../styles/pages/AboutPage.scss";
+import styled from "styled-components";
 import img from "../../assets/manki-bitmoji.png";
+
+const StyledAboutPage = styled.div`
+  padding: 100px 0px;
+
+  .content {
+    display: grid;
+    font-size: 0.8em;
+    grid-template-columns: 2fr 1fr;
+    gap: 50px;
+    .text-container {
+      p {
+        margin: 0px 0px 15px;
+      }
+    }
+    .picture-container {
+      position: relative;
+      border: 2px solid ${(props) => props.theme.colors.appGreenColor};
+      border-radius: 5px;
+      margin: 20px;
+      img {
+        resize: none;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background-color: ${(props) => props.theme.colors.appLightSlateColor};
+        border-radius: 5px;
+        top: -20px;
+        left: -20px;
+        z-index: 1;
+      }
+    }
+  }
+`;
 
 const AboutPage = () => {
   return (
-    <div className="about-page" id="about-page">
-      <h2 className="numbered-heading">About me</h2>
+    <StyledAboutPage id="about-page">
+      <h2>About me</h2>
       <div className="content">
         <div className="text-container">
           <p>
@@ -28,11 +61,11 @@ const AboutPage = () => {
             <li>React</li>
           </ol>
         </div>
-          <div className="picture-container">
-            <img src={img} />
-          </div>
+        <div className="picture-container">
+          <img src={img} />
         </div>
-    </div>
+      </div>
+    </StyledAboutPage>
   );
 };
 
