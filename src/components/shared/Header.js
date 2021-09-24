@@ -1,37 +1,95 @@
-import React from 'react';
-import styled from 'styled-components';
-import GreenButton from './GreenButton';
-import HeaderButton from './HeaderButton';
-import cv from '../../assets/CV_2021-09-22_Myriam_Anki.pdf';
+import React, { useState, useEffect } from "react";
+import styled from "styled-components";
+import GreenButton from "./GreenButton";
+import HeaderButton from "./HeaderButton";
+import { FiMenu } from "react-icons/fi";
+import { MdClose } from "react-icons/md";
+import cv from "../../assets/CV_2021-09-22_Myriam_Anki.pdf";
 
 const StyledHeader = styled.header`
+  div {
     display: flex;
-    flex-direction: row-reverse;
-    position: fixed;
     right: 0;
-    margin-right: 40px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    position: fixed;
     font-family: monospace;
     font-size: 16px;
     z-index: 2;
     top: 0;
+    opacity: 0.97;
+    text-align: center;
+    ${({ width }) =>
+    width > 800
+    ? `
+    // background-color: ${(props) => props.theme.colors.appNavyColor};
+    flex-direction: row-reverse;
+    margin-right: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     width: 100vw;
     height: 80px;
-    background-color: ${(props) => props.theme.colors.appNavyColor};
-    opacity: 0.97;
+    `
+    : `
+    // background-color: ${(props) => "red"};
+    flex-direction: column-reverse;
+    justify-content: center;
+    width: 70vw;
+    height: 100vh;
+    a {
+      margin: 15px 0px;
+    }
+    `};
+  }
+  button {
+    color: ${(props) => props.theme.colors.appGreenColor};
+    border: none;
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    font-size: 40px;
+    visibility: ${({ width }) => width > 800 ? "hidden" : "visible"};
+  }
 `;
 
 const Header = () => {
-    return (
-      <StyledHeader>
-          <GreenButton title="Resume" href={cv} />
-          <HeaderButton title="Contact" goTo="#contact-page" />
-          <HeaderButton title="Work" goTo="#work-page" />
-          <HeaderButton title="Experience" goTo="#experience-page" />
-          <HeaderButton title="About" goTo="#about-page"/>
-      </StyledHeader>
-    );
+  const [width, setWindowWidth] = useState(0);
+  const [showMenu, setShowMenu] = useState(false);
+
+  useEffect(() => {
+    updateDimensions();
+
+    window.addEventListener("resize", updateDimensions);
+    return () => window.removeEventListener("resize", updateDimensions);
+  }, []);
+
+  const updateDimensions = () => {
+    const width = window.innerWidth;
+    setWindowWidth(width);
   };
-  
-  export default Header;
+  return (
+    <StyledHeader width={width}>
+      {
+        showMenu || width > 800 ?
+        (
+          <div>
+            <GreenButton title="Resume" href={cv} />
+            <HeaderButton title="Contact" goTo="#contact-page" />
+            <HeaderButton title="Work" goTo="#work-page" />
+            <HeaderButton title="Experience" goTo="#experience-page" />
+            <HeaderButton title="About" goTo="#about-page" />
+            <button onClick={() => {setShowMenu(false)}}>
+              <MdClose />
+            </button>
+          </div>
+        )
+        : (
+
+          <button onClick={() => {setShowMenu(true)}}>
+          <FiMenu />
+        </button>
+        )
+      }
+    </StyledHeader>
+  );
+};
+
+export default Header;

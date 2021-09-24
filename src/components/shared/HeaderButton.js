@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
 const StyledHeaderButton = styled.a`
@@ -16,6 +16,13 @@ const StyledHeaderButton = styled.a`
     margin-right: 5px;
     color: ${(props) => props.theme.colors.appGreenColor};
   }
+  ${({ width }) =>
+    width > 800
+      ? ``
+      : `
+        display: grid;
+        grid-template-rows: 3fr 2fr;
+        `};
 
   &:hover {
     border: 2px dashed ${(props) => props.theme.colors.appGreenColor};
@@ -25,8 +32,21 @@ const StyledHeaderButton = styled.a`
 `;
 
 const HeaderButton = ({ title = "Button", goTo = "#" }) => {
+  const [width, setWindowWidth] = useState(0);
+
+  useEffect(() => {
+    updateDimensions();
+
+    window.addEventListener("resize", updateDimensions);
+    return () => window.removeEventListener("resize", updateDimensions);
+  }, []);
+
+  const updateDimensions = () => {
+    const width = window.innerWidth;
+    setWindowWidth(width);
+  };
   return (
-    <StyledHeaderButton href={goTo}>
+    <StyledHeaderButton width={width} href={goTo}>
       {title}
     </StyledHeaderButton>
   );
