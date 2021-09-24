@@ -27,10 +27,8 @@ const StyledApp = styled.div`
     background-color: ${(props) => props.theme.colors.appNavyColor};
     box-sizing: border-box;
   }
-
   counter-set: headerCounter 5 h2Counter 0;
   color: ${(props) => props.theme.colors.appWhiteColor};
-  margin: 10px;
 
   a {
     color: inherit;
