@@ -25,6 +25,7 @@ const theme = {
 const StyledApp = styled.div`
   * {
     box-sizing: border-box;
+    background-color: ${(props) => props.theme.colors.appNavyColor};
   }
   counter-set: headerCounter 5 h2Counter 0;
   color: ${(props) => props.theme.colors.appWhiteColor};
