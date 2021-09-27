@@ -13,7 +13,7 @@ const StyledLogo = styled.a`
 const Logo = () => {
   return (
     <StyledLogo href="#">
-      <img src={logo} />
+      <img src={logo} alt="Logo"/>
     </StyledLogo>
   );
 };

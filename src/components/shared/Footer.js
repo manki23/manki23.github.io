@@ -22,7 +22,7 @@ const Footer = () => {
       <p>
         Disclaimer: I did not create the design of this website. <br /> It was
         inspired by{" "}
-        <a target="_blank" href="https://brittanychiang.com/">
+        <a target="_blank" href="https://brittanychiang.com/" rel="noopener noreferrer">
           Brittany Chiang portfolio
         </a>
         .<br />

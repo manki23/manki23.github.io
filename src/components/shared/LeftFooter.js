@@ -34,7 +34,12 @@ const LeftFooter = () => {
   return (
     <StyledLeftFooter>
       <p>
-        <a href="https://github.com/manki23" target="_blank" title="GitHub">
+        <a
+          href="https://github.com/manki23"
+          target="_blank"
+          title="GitHub"
+          rel="noopener noreferrer"
+        >
           <FiGithub />
         </a>
       </p>
@@ -43,12 +48,18 @@ const LeftFooter = () => {
           href="https://www.linkedin.com/in/myriam-anki-8b9258198/"
           target="_blank"
           title="LinkedIn"
+          rel="noopener noreferrer"
         >
           <FiLinkedin />
         </a>
       </p>
       <p>
-        <a href="mailto:myriam.anki.pro@gmail.com" target="_blank" title="Mail">
+        <a
+          href="mailto:myriam.anki.pro@gmail.com"
+          target="_blank"
+          title="Mail"
+          rel="noopener noreferrer"
+        >
           <FaRegEnvelope />
         </a>
       </p>

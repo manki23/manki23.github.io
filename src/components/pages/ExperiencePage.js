@@ -88,7 +88,7 @@ const JobContent = ({
     <div hidden={hidden}>
       <h3>
         {title}{" "}
-        <a href={companyLink} target="_blank">
+        <a href={companyLink} target="_blank" rel="noopener noreferrer">
           @ {companyName}
         </a>
       </h3>
@@ -112,13 +112,13 @@ const ExperiencePage = () => {
       <h2>Where I've Worked</h2>
       <div className="content slate-color">
         <div className="job-tabs">
-          <button className={tab == 0 ? "selected" : ""} onClick={() => setTab(0)}>
+          <button className={tab === 0 ? "selected" : ""} onClick={() => setTab(0)}>
             Pongo
           </button>
-          <button className={tab == 1 ? "selected" : ""} onClick={() => setTab(1)}>
+          <button className={tab === 1 ? "selected" : ""} onClick={() => setTab(1)}>
             Dauphine Junior Consulting
           </button>
-          <button className={tab == 2 ? "selected" : ""} onClick={() => setTab(2)}>
+          <button className={tab === 2 ? "selected" : ""} onClick={() => setTab(2)}>
             Pongo Internship
           </button>
         </div>
@@ -129,7 +129,7 @@ const ExperiencePage = () => {
             companyName="Dauphine Junior Consulting"
             companyLink="https://dauphine-junior-consulting.com/paris/"
             timeframe="April 2021"
-            hidden={tab != 1}
+            hidden={tab !== 1}
           />
           <JobContent
             content={["test", "one", "two", "three"]}
@@ -137,7 +137,7 @@ const ExperiencePage = () => {
             companyName="Pongo"
             companyLink="https://www.heypongo.com/"
             timeframe="November 2020 -  August 2021"
-            hidden={tab != 0}
+            hidden={tab !== 0}
           />
           <JobContent
             content={["test", "one", "two", "three"]}
@@ -145,7 +145,7 @@ const ExperiencePage = () => {
             companyName="Pongo"
             companyLink="https://www.heypongo.com/"
             timeframe="May - October 2020"
-            hidden={tab != 2}
+            hidden={tab !== 2}
           />
         </div>
       </div>

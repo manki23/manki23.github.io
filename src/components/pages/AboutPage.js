@@ -62,7 +62,7 @@ const AboutPage = () => {
           </ol>
         </div>
         <div className="picture-container">
-          <img src={img} />
+          <img src={img} alt="manki"/>
         </div>
       </div>
     </StyledAboutPage>

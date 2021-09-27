@@ -7,12 +7,12 @@ const StyledWorkPage = styled.div`
 
 const WorkPage = () => {
   return (
-    <div id="work-page">
+    <StyledWorkPage id="work-page">
       <h2>Some Things I've Built</h2>
       <div>
         WIP: work page will be done soon.
       </div>
-    </div>
+    </StyledWorkPage>
   );
 };
 
