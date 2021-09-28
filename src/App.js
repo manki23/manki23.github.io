@@ -3,7 +3,7 @@ import LeftFooter from "./components/shared/LeftFooter";
 import Header from "./components/shared/Header";
 import Logo from "./components/shared/Logo";
 import Main from "./components/pages/Main";
-import Footer from "./components/shared/Footer";
+import { WindowWidthProvider } from "./components/hooks/WindowWidthContext";
 
 const theme = {
   colors: {
@@ -17,6 +17,20 @@ const theme = {
     appGreenColor: `#64ffda`,
     appGreenTextBackgroundColor: `#133141`,
   },
+  fontSize: {
+    xxs: `12px`,
+    xs: `13px`,
+    sm: `14px`,
+    md: `16px`,
+    lg: `18px`,
+    xl: `20px`,
+    xxl: `22px`,
+  },
+  widthBreakpoints: {
+    sm: 640,
+    md: 800,
+    lg: 1024,
+  },
   fontMono: `"SF Mono","Fira Code","Fira Mono","Roboto Mono",monospace`,
   transition: `all 0.25s cubic-bezier(0.645,0.045,0.355,1)`,
   headerMargin: `10px`,
@@ -27,6 +41,7 @@ const StyledApp = styled.div`
     box-sizing: border-box;
     background-color: ${(props) => props.theme.colors.appNavyColor};
   }
+  display: flex;
   counter-set: headerCounter 5 h2Counter 0;
   color: ${(props) => props.theme.colors.appWhiteColor};
   background-color: ${(props) => props.theme.colors.appNavyColor};
@@ -93,12 +108,13 @@ const StyledApp = styled.div`
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <StyledApp>
+      <StyledApp className="approot">
         <Logo />
-        <Header />
-        <Main />
-        <LeftFooter />
-        <Footer />
+        <WindowWidthProvider>
+          <Header />
+          <Main />
+          <LeftFooter />
+        </WindowWidthProvider>
       </StyledApp>
     </ThemeProvider>
   );

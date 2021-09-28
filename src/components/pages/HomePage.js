@@ -7,25 +7,25 @@ const StyledHomePage = styled.div`
     flex-direction: column;
     justify-content: center;
     #pre-title {
-        color: ${(props) => props.theme.colors.appGreenColor};
-        font-size: 20px;
+        color: ${({ theme }) => theme.colors.appGreenColor};
+        font-size: ${({ theme }) => `clamp(${theme.fontSize.sm}, 5vw, ${theme.fontSize.md})`};
     }
     
     #title-name {
-        color: ${(props) => props.theme.colors.appLightestSlateColor};
+        color: ${({ theme }) => theme.colors.appLightestSlateColor};
     }
     
     #title-whoami {
-        color: ${(props) => props.theme.colors.appLightSlateColor};
+        color: ${({ theme }) => theme.colors.appLightSlateColor};
     }
     
     #title-name, #title-whoami {
-        font-size: 70px;
+        font-size: clamp(40px, 8vw, 80px);
         font-weight: bold;
     }
 
     #small-intro {
-        color: ${(props) => props.theme.colors.appSlateColor};
+        color: ${({ theme }) => theme.colors.appSlateColor};
         margin-top: 20px;
         font-size: 20px;
     }

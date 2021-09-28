@@ -1,23 +1,30 @@
 import React from "react";
+import { useWindowWidth } from "../hooks/WindowWidthContext";
 import styled from "styled-components";
 import AboutPage from "./AboutPage";
 import HomePage from "./HomePage";
 import ExperiencePage from "./ExperiencePage";
 import WorkPage from "./WorkPage";
 import ContactPage from "./ContactPage";
+import Footer from "../shared/Footer";
 
 const StyledMain = styled.div`
-  padding: 0px 150px;
+  padding: ${({width, theme}) => width > theme.widthBreakpoints.sm ? `0px 150px` : `0px 25px`};
+  display: flex;
+  flex-direction: column;
 `;
 
 const Main = () => {
+  const [width] = useWindowWidth();
+
   return (
-    <StyledMain>
+    <StyledMain width={width} >
       <HomePage />
       <AboutPage />
       <ExperiencePage />
       <WorkPage />
       <ContactPage />
+      <Footer />
     </StyledMain>
   );
 };

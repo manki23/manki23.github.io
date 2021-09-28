@@ -18,7 +18,7 @@ const StyledHeader = styled.header`
     top: 0;
     opacity: 0.97;
     text-align: center;
-    ${({ width }) =>
+    ${({ width, theme }) =>
       width > 800
         ? `
     flex-direction: row-reverse;
@@ -33,8 +33,12 @@ const StyledHeader = styled.header`
     justify-content: center;
     width: 70vw;
     height: 100vh;
+    background-color: ${theme.colors.appLightNavyColor};
     a {
       margin: 15px 0px;
+    }
+    button, svg, a {
+      background-color: ${theme.colors.appLightNavyColor};
     }
     `};
   }
