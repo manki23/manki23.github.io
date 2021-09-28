@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
+import { useWindowWidth } from "../hooks/WindowWidthContext";
 
 const StyledHeaderButton = styled.a`
   display: flex;
@@ -32,19 +33,8 @@ const StyledHeaderButton = styled.a`
 `;
 
 const HeaderButton = ({ title = "Button", goTo = "#" }) => {
-  const [width, setWindowWidth] = useState(0);
+  const [width] = useWindowWidth();
 
-  useEffect(() => {
-    updateDimensions();
-
-    window.addEventListener("resize", updateDimensions);
-    return () => window.removeEventListener("resize", updateDimensions);
-  }, []);
-
-  const updateDimensions = () => {
-    const width = window.innerWidth;
-    setWindowWidth(width);
-  };
   return (
     <StyledHeaderButton width={width} href={goTo}>
       {title}

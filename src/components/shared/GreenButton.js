@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { useWindowWidth } from "../hooks/WindowWidthContext";
 import styled from "styled-components";
 
 const StyledGreenButton = styled.a`
@@ -28,19 +29,8 @@ const StyledGreenButton = styled.a`
 `;
 
 const GreenButton = ({ title = "Green Button", href = "#" }) => {
-  const [width, setWindowWidth] = useState(0);
+  const [width] = useWindowWidth();
 
-  useEffect(() => {
-    updateDimensions();
-
-    window.addEventListener("resize", updateDimensions);
-    return () => window.removeEventListener("resize", updateDimensions);
-  }, []);
-
-  const updateDimensions = () => {
-    const width = window.innerWidth;
-    setWindowWidth(width);
-  };
   return (
     <StyledGreenButton width={width} href={href} target="_blank">
       {title}

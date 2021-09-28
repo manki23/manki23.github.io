@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import { useWindowWidth } from "../hooks/WindowWidthContext";
 import styled from "styled-components";
 import GreenButton from "./GreenButton";
 import HeaderButton from "./HeaderButton";
@@ -18,9 +19,8 @@ const StyledHeader = styled.header`
     opacity: 0.97;
     text-align: center;
     ${({ width }) =>
-    width > 800
-    ? `
-    // background-color: ${(props) => props.theme.colors.appNavyColor};
+      width > 800
+        ? `
     flex-direction: row-reverse;
     margin-right: 40px;
     padding-top: 10px;
@@ -28,8 +28,7 @@ const StyledHeader = styled.header`
     width: 100vw;
     height: 80px;
     `
-    : `
-    // background-color: ${(props) => "red"};
+        : `
     flex-direction: column-reverse;
     justify-content: center;
     width: 70vw;
@@ -46,48 +45,40 @@ const StyledHeader = styled.header`
     top: 15px;
     right: 15px;
     font-size: 40px;
-    visibility: ${({ width }) => width > 800 ? "hidden" : "visible"};
+    visibility: ${({ width }) => (width > 800 ? "hidden" : "visible")};
   }
 `;
 
 const Header = () => {
-  const [width, setWindowWidth] = useState(0);
   const [showMenu, setShowMenu] = useState(false);
+  const [width] = useWindowWidth();
 
-  useEffect(() => {
-    updateDimensions();
-
-    window.addEventListener("resize", updateDimensions);
-    return () => window.removeEventListener("resize", updateDimensions);
-  }, []);
-
-  const updateDimensions = () => {
-    const width = window.innerWidth;
-    setWindowWidth(width);
-  };
   return (
     <StyledHeader width={width}>
-      {
-        showMenu || width > 800 ?
-        (
-          <div>
-            <GreenButton title="Resume" href={cv} />
-            <HeaderButton title="Contact" goTo="#contact-page" />
-            <HeaderButton title="Work" goTo="#work-page" />
-            <HeaderButton title="Experience" goTo="#experience-page" />
-            <HeaderButton title="About" goTo="#about-page" />
-            <button onClick={() => {setShowMenu(false)}}>
-              <MdClose />
-            </button>
-          </div>
-        )
-        : (
-
-          <button onClick={() => {setShowMenu(true)}}>
+      {showMenu || width > 800 ? (
+        <div>
+          <GreenButton title="Resume" href={cv} />
+          <HeaderButton title="Contact" goTo="#contact-page" />
+          <HeaderButton title="Work" goTo="#work-page" />
+          <HeaderButton title="Experience" goTo="#experience-page" />
+          <HeaderButton title="About" goTo="#about-page" />
+          <button
+            onClick={() => {
+              setShowMenu(false);
+            }}
+          >
+            <MdClose />
+          </button>
+        </div>
+      ) : (
+        <button
+          onClick={() => {
+            setShowMenu(true);
+          }}
+        >
           <FiMenu />
         </button>
-        )
-      }
+      )}
     </StyledHeader>
   );
 };
