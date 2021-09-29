@@ -128,6 +128,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <StyledApp className="approot">
         <WindowWidthProvider>
+          <Logo />
           <Header />
           <Main />
           <LeftFooter />

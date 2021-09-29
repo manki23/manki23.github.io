@@ -5,7 +5,8 @@ import logo from "../../assets/manki-bitmoji.png";
 
 const StyledLogo = styled.a`
   img {
-    position: ${({width, theme}) => width > theme.widthBreakpoints.sm ? `fixed` : `relative`};
+    position: ${({ width, theme }) =>
+      width > theme.widthBreakpoints.sm ? `fixed` : `relative`};
     height: 5.9em;
     z-index: 3;
   }
@@ -14,11 +15,15 @@ const StyledLogo = styled.a`
 const Logo = () => {
   const [width] = useWindowWidth();
 
-  return (
-    <StyledLogo href="#" width={width}>
-      <img src={logo} alt="Logo"/>
-    </StyledLogo>
-  );
+  if (width > 640) {
+    return (
+      <StyledLogo href="#" width={width}>
+        <img src={logo} alt="Logo" />
+      </StyledLogo>
+    );
+  } else {
+    return <></>;
+  }
 };
 
 export default Logo;

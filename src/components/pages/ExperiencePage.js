@@ -1,9 +1,18 @@
 import React, { useState } from "react";
+import { useWindowWidth } from "../hooks/WindowWidthContext";
 import styled from "styled-components";
 
 const StyledExperiencePage = styled.div`
   padding: 100px 0px;
-  margin-left: 87px;
+  ${({ width, theme }) =>
+    console.log(
+      width > theme.widthBreakpoints.md,
+      width,
+      theme.widthBreakpoints.md
+    )}
+
+  margin-left: ${({ width, theme }) =>
+    width > theme.widthBreakpoints.md ? `87px` : `0px`};
   .content {
     display: grid;
     grid-template-columns: 1fr 3fr;
@@ -16,9 +25,10 @@ const StyledExperiencePage = styled.div`
         display: flex;
         -webkit-box-align: center;
         align-items: center;
-        border-left: 2px solid ${(props) => props.theme.colors.appLightestNavyColor};
+        border-left: 2px solid
+          ${({ theme }) => theme.colors.appLightestNavyColor};
         background-color: transparent;
-        color: ${(props) => props.theme.colors.appSlateColor};
+        color: ${({ theme }) => theme.colors.appSlateColor};
         font-family: monospace;
         font-size: 15px;
         text-align: left;
@@ -27,21 +37,23 @@ const StyledExperiencePage = styled.div`
         cursor: pointer;
         border: 0px;
         border-radius: 0px;
-        border-left: 2px solid ${(props) => props.theme.colors.appLightestNavyColor};
+        border-left: 2px solid
+          ${({ theme }) => theme.colors.appLightestNavyColor};
       }
 
-      button:hover, .selected {
+      button:hover,
+      .selected {
         color: ${(props) => props.theme.colors.appGreenColor};
-        border-left: 2px solid ${(props) => props.theme.colors.appGreenColor};
+        border-left: 2px solid ${({ theme }) => theme.colors.appGreenColor};
       }
-      
+
       button:hover {
-        background-color: ${(props) => props.theme.colors.appLightestNavyColor};
+        background-color: ${({ theme }) => theme.colors.appLightestNavyColor};
       }
     }
 
     .job-description {
-        padding: 10px 5px;
+      padding: 10px 5px;
       h3 {
         margin: 0px;
         margin-bottom: 2px;
@@ -53,11 +65,11 @@ const StyledExperiencePage = styled.div`
         margin-bottom: 25px;
       }
       a {
-          color: ${(props) => props.theme.colors.appGreenColor};
+        color: ${({ theme }) => theme.colors.appGreenColor};
       }
     }
   }
-`
+`;
 
 const JobContent = ({
   content = [],
@@ -89,24 +101,34 @@ const JobContent = ({
 
 const ExperiencePage = () => {
   const [tab, setTab] = useState(0);
+  const [width] = useWindowWidth();
 
   return (
-    <StyledExperiencePage id="experience-page">
+    <StyledExperiencePage id="experience-page" width={width}>
       <h2>Where I've Worked</h2>
-      <div className="content slate-color">
+      <div className="content">
         <div className="job-tabs">
-          <button className={tab === 0 ? "selected" : ""} onClick={() => setTab(0)}>
+          <button
+            className={tab === 0 ? "selected" : ""}
+            onClick={() => setTab(0)}
+          >
             Pongo
           </button>
-          <button className={tab === 1 ? "selected" : ""} onClick={() => setTab(1)}>
+          <button
+            className={tab === 1 ? "selected" : ""}
+            onClick={() => setTab(1)}
+          >
             Dauphine Junior Consulting
           </button>
-          <button className={tab === 2 ? "selected" : ""} onClick={() => setTab(2)}>
+          <button
+            className={tab === 2 ? "selected" : ""}
+            onClick={() => setTab(2)}
+          >
             Pongo Internship
           </button>
         </div>
         <div className="job-description">
-        <JobContent
+          <JobContent
             content={["test", "one", "two", "three"]}
             title="Mission fullstack Laravel"
             companyName="Dauphine Junior Consulting"

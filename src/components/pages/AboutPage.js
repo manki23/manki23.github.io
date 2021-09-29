@@ -1,5 +1,4 @@
 import React from "react";
-import { FaFileExcel } from "react-icons/fa";
 import styled from "styled-components";
 import img from "../../assets/manki-bitmoji.png";
 import { useWindowWidth } from "../hooks/WindowWidthContext";
@@ -8,13 +7,6 @@ const StyledAboutPage = styled.div`
   padding: 100px 0px;
 
   .content {
-    /* text-align: center; */
-    ${({ width, theme }) =>
-      console.log(
-        width > theme.widthBreakpoints.md,
-        width,
-        theme.widthBreakpoints.sm
-      )}
     ${({ width, theme }) =>
       width > theme.widthBreakpoints.md
         ? `
