@@ -15,7 +15,7 @@ const StyledLogo = styled.a`
 const Logo = () => {
   const [width] = useWindowWidth();
 
-  if (width > 640) {
+  if (width > 800) {
     return (
       <StyledLogo href="#" width={width}>
         <img src={logo} alt="Logo" />

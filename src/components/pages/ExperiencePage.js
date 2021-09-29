@@ -14,37 +14,43 @@ const StyledExperiencePage = styled.div`
   margin-left: ${({ width, theme }) =>
     width > theme.widthBreakpoints.md ? `87px` : `0px`};
   .content {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
+    ${({ width, theme }) => width > theme.widthBreakpoints.md ? `
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+    `: ``}
     .job-tabs {
+      ${({ width, theme }) => width > theme.widthBreakpoints.md ? ``: `
+        display: flex;
+        overflow-x: auto;
+        margin-bottom: 25px;
+      `}
       button {
         max-width: 90px;
         height: 42px;
-        min-width: 100%;
+        min-width: ${({ width, theme }) => width > theme.widthBreakpoints.md ? `100%` : `fit-content`};
         transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
         display: flex;
         -webkit-box-align: center;
         align-items: center;
-        border-left: 2px solid
-          ${({ theme }) => theme.colors.appLightestNavyColor};
         background-color: transparent;
         color: ${({ theme }) => theme.colors.appSlateColor};
         font-family: monospace;
         font-size: 15px;
         text-align: left;
-        padding: 10px;
-
+        padding: ${({ width, theme }) => width > theme.widthBreakpoints.md ? `10px` : `10px 30px`};
+        
         cursor: pointer;
         border: 0px;
         border-radius: 0px;
-        border-left: 2px solid
-          ${({ theme }) => theme.colors.appLightestNavyColor};
+        ${({ width, theme }) => width > theme.widthBreakpoints.md ? `border-left: 2px solid` : `border-bottom: 2px solid`}
+         ${({ theme }) => theme.colors.appLightestNavyColor};
       }
 
       button:hover,
       .selected {
         color: ${(props) => props.theme.colors.appGreenColor};
-        border-left: 2px solid ${({ theme }) => theme.colors.appGreenColor};
+        ${({ width, theme }) => width > theme.widthBreakpoints.md ? `border-left: 2px solid` : `border-bottom: 2px solid`}
+         ${({ theme }) => theme.colors.appGreenColor};
       }
 
       button:hover {

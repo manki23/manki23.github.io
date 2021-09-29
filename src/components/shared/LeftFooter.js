@@ -33,7 +33,7 @@ const StyledLeftFooter = styled.div`
 
 const LeftFooter = () => {
   const [width] = useWindowWidth();
-  if (width > 640) {
+  if (width > 800) {
     return (
       <StyledLeftFooter width={width}>
         <p>

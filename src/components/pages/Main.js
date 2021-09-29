@@ -9,7 +9,10 @@ import ContactPage from "./ContactPage";
 import Footer from "../shared/Footer";
 
 const StyledMain = styled.div`
-  padding: ${({width, theme}) => width > theme.widthBreakpoints.sm ? `0px 150px` : `0px 25px`};
+  padding: ${({ width, theme }) =>
+    width > theme.widthBreakpoints.md ? `0px 150px` : 
+    width > theme.widthBreakpoints.sm ? `0px 75px` :
+    `0px 25px`};
   display: flex;
   flex-direction: column;
 `;
@@ -18,7 +21,7 @@ const Main = () => {
   const [width] = useWindowWidth();
 
   return (
-    <StyledMain width={width} >
+    <StyledMain width={width}>
       <HomePage />
       <AboutPage />
       <ExperiencePage />
