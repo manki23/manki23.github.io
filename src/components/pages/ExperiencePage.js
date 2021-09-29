@@ -52,23 +52,6 @@ const StyledExperiencePage = styled.div`
         margin-top: 0px;
         margin-bottom: 25px;
       }
-      ul {
-        margin: 0px;
-        padding: 0px;
-        li {
-          list-style-type: none;
-          font-size: 18px;
-          position: relative;
-          padding-left: 30px;
-          margin-bottom: 10px;
-        }
-        li::before {
-          content: "▹";
-          position: absolute;
-          left: 0px;
-          color: ${(props) => props.theme.colors.appGreenColor};
-        }
-      }
       a {
           color: ${(props) => props.theme.colors.appGreenColor};
       }
@@ -95,8 +78,8 @@ const JobContent = ({
       <p>{timeframe}</p>
       <div>
         <ul>
-          {content.map((text) => (
-            <li>{text}</li>
+          {content.map((text, index) => (
+            <li key={index}>{text}</li>
           ))}
         </ul>
       </div>

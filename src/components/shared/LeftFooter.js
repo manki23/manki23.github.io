@@ -1,4 +1,5 @@
 import React from "react";
+import { useWindowWidth } from "../hooks/WindowWidthContext";
 import styled from "styled-components";
 import { FiGithub, FiLinkedin } from "react-icons/fi";
 import { FaRegEnvelope } from "react-icons/fa";
@@ -31,41 +32,46 @@ const StyledLeftFooter = styled.div`
 `;
 
 const LeftFooter = () => {
-  return (
-    <StyledLeftFooter>
-      <p>
-        <a
-          href="https://github.com/manki23"
-          target="_blank"
-          title="GitHub"
-          rel="noopener noreferrer"
-        >
-          <FiGithub />
-        </a>
-      </p>
-      <p>
-        <a
-          href="https://www.linkedin.com/in/myriam-anki-8b9258198/"
-          target="_blank"
-          title="LinkedIn"
-          rel="noopener noreferrer"
-        >
-          <FiLinkedin />
-        </a>
-      </p>
-      <p>
-        <a
-          href="mailto:myriam.anki.pro@gmail.com"
-          target="_blank"
-          title="Mail"
-          rel="noopener noreferrer"
-        >
-          <FaRegEnvelope />
-        </a>
-      </p>
-      <span />
-    </StyledLeftFooter>
-  );
+  const [width] = useWindowWidth();
+  if (width > 640) {
+    return (
+      <StyledLeftFooter width={width}>
+        <p>
+          <a
+            href="https://github.com/manki23"
+            target="_blank"
+            title="GitHub"
+            rel="noopener noreferrer"
+          >
+            <FiGithub />
+          </a>
+        </p>
+        <p>
+          <a
+            href="https://www.linkedin.com/in/myriam-anki-8b9258198/"
+            target="_blank"
+            title="LinkedIn"
+            rel="noopener noreferrer"
+          >
+            <FiLinkedin />
+          </a>
+        </p>
+        <p>
+          <a
+            href="mailto:myriam.anki.pro@gmail.com"
+            target="_blank"
+            title="Mail"
+            rel="noopener noreferrer"
+          >
+            <FaRegEnvelope />
+          </a>
+        </p>
+        <span />
+      </StyledLeftFooter>
+    );
+  } else {
+    return <></>;
+  }
 };
 
 export default LeftFooter;

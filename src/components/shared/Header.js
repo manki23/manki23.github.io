@@ -19,7 +19,7 @@ const StyledHeader = styled.header`
     opacity: 0.97;
     text-align: center;
     ${({ width, theme }) =>
-      width > 800
+      width > theme.widthBreakpoints.md
         ? `
     flex-direction: row-reverse;
     margin-right: 40px;
