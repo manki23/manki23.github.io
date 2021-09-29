@@ -8,6 +8,7 @@ const StyledContactPage = styled.div`
     padding: 100px 0px;
     text-align: center;
     div {
+      font-size: ${({ theme }) => `clamp(${theme.fontSize.md}, 5vw, ${theme.fontSize.xxl})`};
         display: grid;
     }
 `

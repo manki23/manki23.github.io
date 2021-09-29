@@ -6,7 +6,7 @@ const StyledFooter = styled.footer`
   width: 70vw;
   margin-left: auto;
   margin-right: auto;
-  padding: 25px;
+  font-size: 0.9em;
   p {
     font-family: monospace;
     text-align: center;

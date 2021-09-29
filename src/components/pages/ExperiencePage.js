@@ -66,7 +66,7 @@ const StyledExperiencePage = styled.div`
       }
       p {
         font-family: monospace;
-        font-size: 0.6em;
+        font-size: 0.7em;
         margin-top: 0px;
         margin-bottom: 25px;
       }
