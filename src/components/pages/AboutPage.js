@@ -72,27 +72,6 @@ const StyledAboutPage = styled.div`
         ${({ width, theme }) => width > theme.widthBreakpoints.md ? ` `
         : ` margin-left: auto; margin-right: auto; `};
       }
-
-      #wrapper::before {
-        top: 0px;
-        left: 0px;
-        /* background-color: {({ theme }) => theme.colors.appNavyColor}; */
-        mix-blend-mode: screen;
-
-        content: "";
-        display: block;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        border-radius: ${({ theme }) => theme.borderRadius};
-        transition: ${({ theme }) => theme.transition};
-      }
-
-      #wrapper:after:hover {
-        top: 10px;
-        left: 10px;
-        border: 20px solid red;
-      }
     }
   }
 `;
