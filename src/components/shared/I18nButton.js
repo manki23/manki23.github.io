@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useWindowWidth } from "../hooks/WindowWidthContext";
+import { useLanguage } from "../hooks/LanguageContext";
 import { MdLanguage } from "react-icons/md";
 import { RiArrowDownSLine } from "react-icons/ri";
 
@@ -67,10 +68,11 @@ const LanguageDropDown = ({ setShowDropDown }) => {
 
 const I18nButton = () => {
   const [width] = useWindowWidth();
+  const [language] = useLanguage();
   const [showDropDown, setShowDropDown] = useState(false);
   const drop = React.useRef(null);
   
-  const language = langs[i18n.language];
+  const langName = langs[language];
 
 
   function handleClick(e) {
@@ -90,7 +92,7 @@ const I18nButton = () => {
       <StyledI18nButton className="dropdown" ref={drop} width={width} onClick={() => {setShowDropDown(!showDropDown)}}>
         <MdLanguage />
         &nbsp;
-        <span>{language}</span>
+        <span>{langName}</span>
         &nbsp;
         <RiArrowDownSLine />
       </StyledI18nButton>
