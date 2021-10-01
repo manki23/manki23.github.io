@@ -38,7 +38,7 @@ const TRANSLATIONS_EN = {
         },
         {
             tabName: "Dauphine Junior Consulting",
-            jobTitle: "Mission fullstack Laravel",
+            jobTitle: "Fullstack Laravel Mission",
             companyName: "Dauphine Junior Consulting",
             companyLink: "https://dauphine-junior-consulting.com/paris/",
             timeframe: "April 2021",
@@ -49,7 +49,7 @@ const TRANSLATIONS_EN = {
             jobTitle: "Laravel backend internship",
             companyName: "Pongo",
             companyLink: "https://www.heypongo.com/",
-            timeframe: "May - October 2020",
+            timeframe: "May 2020 - October 2020",
             content: ["test", "one", "two", "three"],
         },
     ],
