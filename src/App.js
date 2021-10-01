@@ -4,6 +4,7 @@ import Header from "./components/shared/Header";
 import Logo from "./components/shared/Logo";
 import Main from "./components/pages/Main";
 import { WindowWidthProvider } from "./components/hooks/WindowWidthContext";
+import { LanguageProvider } from "./components/hooks/LanguageContext";
 
 const theme = {
   colors: {
@@ -31,6 +32,7 @@ const theme = {
   widthBreakpoints: {
     sm: 640,
     md: 800,
+    header: 900,
     lg: 1024,
   },
   fontMono: `"SF Mono","Fira Code","Fira Mono","Roboto Mono",monospace`,
@@ -158,12 +160,14 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <StyledApp className="approot">
-        <WindowWidthProvider>
-          <Logo />
-          <Header />
-          <Main />
-          <LeftFooter />
-        </WindowWidthProvider>
+        <LanguageProvider>
+          <WindowWidthProvider>
+            <Logo />
+            <Header />
+            <Main />
+            <LeftFooter />
+          </WindowWidthProvider>
+        </LanguageProvider>
       </StyledApp>
     </ThemeProvider>
   );
