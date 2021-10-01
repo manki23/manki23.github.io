@@ -9,17 +9,18 @@ const StyledLeftFooter = styled.div`
   left: 40px;
   bottom: 0;
 
-  p:hover {
-    color: ${(props) => props.theme.colors.appGreenColor};
+  div:hover {
+    color: ${({ theme }) => theme.colors.appGreenColor};
   }
 
-  p {
+  div {
     font-size: 23px;
     margin: 20px 0px;
+    color: ${({ theme }) => theme.colors.appSlateColor};
   }
 
-  p:active {
-    outline: 2px dashed ${(props) => props.theme.colors.appGreenColor};
+  div:active {
+    outline: 2px dashed ${({ theme }) => theme.colors.appGreenColor};
     outline-offset: 6px;
   }
 
@@ -27,7 +28,7 @@ const StyledLeftFooter = styled.div`
     display: inline-block;
     margin-left: 0.5em;
     min-height: 6em;
-    border-right: 1px solid ${(props) => props.theme.colors.appSlateColor};
+    border-right: 1px solid ${({ theme }) => theme.colors.appSlateColor};
   }
 `;
 
@@ -36,7 +37,7 @@ const LeftFooter = () => {
   if (width > 800) {
     return (
       <StyledLeftFooter width={width}>
-        <p>
+        <div>
           <a
             href="https://github.com/manki23"
             target="_blank"
@@ -45,8 +46,8 @@ const LeftFooter = () => {
           >
             <FiGithub />
           </a>
-        </p>
-        <p>
+        </div>
+        <div>
           <a
             href="https://www.linkedin.com/in/myriam-anki-8b9258198/"
             target="_blank"
@@ -55,8 +56,8 @@ const LeftFooter = () => {
           >
             <FiLinkedin />
           </a>
-        </p>
-        <p>
+        </div>
+        <div>
           <a
             href="mailto:myriam.anki.pro@gmail.com"
             target="_blank"
@@ -65,7 +66,7 @@ const LeftFooter = () => {
           >
             <FaRegEnvelope />
           </a>
-        </p>
+        </div>
         <span />
       </StyledLeftFooter>
     );
