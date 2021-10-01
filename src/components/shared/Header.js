@@ -21,7 +21,7 @@ const StyledHeader = styled.header`
     opacity: 0.97;
     text-align: center;
     ${({ width, theme }) =>
-      width > theme.widthBreakpoints.md
+      width > theme.widthBreakpoints.header
         ? `
     flex-direction: row-reverse;
     margin-right: 40px;
@@ -46,14 +46,14 @@ const StyledHeader = styled.header`
     `};
   }
   .nav-button {
-    color: ${(props) => props.theme.colors.appGreenColor};
-    background-color: ${(props) => props.theme.colors.appNavyColor};
+    color: ${({ theme }) => theme.colors.appGreenColor};
+    background-color: ${({ theme }) => theme.colors.appNavyColor};
     border: none;
     position: fixed;
     top: 15px;
     right: 15px;
     font-size: 40px;
-    visibility: ${({ width }) => (width > 800 ? "hidden" : "visible")};
+    visibility: ${({ width, theme }) => (width > theme.widthBreakpoints.header ? "hidden" : "visible")};
   }
 `;
 
@@ -64,7 +64,7 @@ const Header = () => {
 
   return (
     <StyledHeader width={width}>
-      {showMenu || width > 800 ? (
+      {showMenu || width > 900 ? (
         <div>
           <GreenButton title={t("resume")} href={cv} />
           <HeaderButton title={t("contact")} goTo="#contact-page" />
