@@ -42,18 +42,45 @@ const theme = {
 const StyledApp = styled.div`
   * {
     box-sizing: border-box;
-    background-color: ${({ theme }) => theme.colors.appNavyColor};
   }
   display: flex;
   counter-set: headerCounter 5 h2Counter 0;
   color: ${({ theme }) => theme.colors.appWhiteColor};
   background-color: ${({ theme }) => theme.colors.appNavyColor};
 
-  a {
+  a,
+  button {
     color: inherit;
     text-decoration: none;
     transition: ${({ theme }) => theme.transition};
     cursor: pointer;
+  }
+  p > a {
+    color: ${(props) => props.theme.colors.appGreenColor};
+    outline: 0px;
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    text-decoration-skip-ink: auto;
+    transition: ${({ theme }) => theme.transition};
+  }
+  p > a::after {
+    content: "";
+    display: block;
+    width: 0px;
+    height: 1px;
+    position: relative;
+    background-color: ${({ theme }) => theme.colors.appGreenColor};
+    transition: ${({ theme }) => theme.transition};
+    opacity: 0.5;
+    box-sizing: inherit;
+  }
+  p > a:focus,
+  p > a:hover {
+    outline-offset: 3px;
+  }
+  p > a:hover::after {
+    width: 100%;
   }
 
   h1,
@@ -78,24 +105,23 @@ const StyledApp = styled.div`
     font-size: 1.1em;
   }
 
-
-  ul {
-        margin: 0px;
-        padding: 0px;
-        li {
-          list-style-type: none;
-          font-size: 18px;
-          position: relative;
-          padding-left: 30px;
-          margin-bottom: 10px;
-        }
-        li::before {
-          content: "▹";
-          position: absolute;
-          left: 0px;
-          color: ${(props) => props.theme.colors.appGreenColor};
-        }
-      }
+  .styled-list {
+    margin: 0px;
+    padding: 0px;
+    li {
+      list-style-type: none;
+      font-size: 18px;
+      position: relative;
+      padding-left: 30px;
+      margin-bottom: 10px;
+    }
+    li::before {
+      content: "▹";
+      position: absolute;
+      left: 0px;
+      color: ${(props) => props.theme.colors.appGreenColor};
+    }
+  }
 
   h2::before {
     position: relative;
