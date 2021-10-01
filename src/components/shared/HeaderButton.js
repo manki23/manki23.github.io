@@ -8,14 +8,14 @@ const StyledHeaderButton = styled.a`
   padding: 5px;
   padding-top: 10px;
   font-size: 1em;
-  margin: ${(props) => props.theme.headerMargin};
-  transition: none;
+  margin: ${({ theme }) => theme.headerMargin};
+  transition: none !important;
 
   &::before {
     counter-increment: headerCounter -1;
     content: "0" counter(headerCounter) ".";
     margin-right: 5px;
-    color: ${(props) => props.theme.colors.appGreenColor};
+    color: ${({ theme }) => theme.colors.appGreenColor};
   }
   ${({ width }) =>
     width > 800
@@ -26,9 +26,9 @@ const StyledHeaderButton = styled.a`
         `};
 
   &:hover {
-    border: 2px dashed ${(props) => props.theme.colors.appGreenColor};
-    margin: (${(props) => props.theme.headerMargin} - 2px);
-    color: ${(props) => props.theme.colors.appGreenColor};
+    border: 2px dashed ${({ theme }) => theme.colors.appGreenColor};
+    margin: 8px;
+    color: ${({ theme }) => theme.colors.appGreenColor};
   }
 `;
 
