@@ -56,7 +56,6 @@ const StyledLanguageDropDown = styled.ul`
 const LanguageDropDown = ({ setShowDropDown }) => {
   const handleOnCLick = (key) => {
     setShowDropDown(false);
-    console.log(key);
     i18n.changeLanguage(key);
   };
   return (
