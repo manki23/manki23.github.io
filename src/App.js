@@ -55,7 +55,8 @@ const StyledApp = styled.div`
     transition: ${({ theme }) => theme.transition};
     cursor: pointer;
   }
-  p > a {
+  p > a,
+  h3 > a {
     color: ${(props) => props.theme.colors.appGreenColor};
     outline: 0px;
     display: inline-block;
@@ -64,7 +65,8 @@ const StyledApp = styled.div`
     text-decoration-skip-ink: auto;
     transition: ${({ theme }) => theme.transition};
   }
-  p > a::after {
+  p > a::after,
+  h3 > a::after {
     content: "";
     display: block;
     width: 0px;
@@ -76,10 +78,13 @@ const StyledApp = styled.div`
     box-sizing: inherit;
   }
   p > a:focus,
-  p > a:hover {
+  h3 > a:focus,
+  p > a:hover,
+  h3 > a:hover {
     outline-offset: 3px;
   }
-  p > a:hover::after {
+  p > a:hover::after,
+  h3 > a:hover::after {
     width: 100%;
   }
 
