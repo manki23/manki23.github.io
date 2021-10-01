@@ -3,12 +3,12 @@ import { useWindowWidth } from "../hooks/WindowWidthContext";
 import styled from "styled-components";
 
 const StyledGreenButton = styled.a`
-  color: ${(props) => props.theme.colors.appGreenColor} !important;
-  border: 1px solid ${(props) => props.theme.colors.appGreenColor};
+  color: ${({ theme }) => theme.colors.appGreenColor} !important;
+  border: 1px solid ${({ theme }) => theme.colors.appGreenColor};
   border-radius: 5px;
   font-size: 1em;
-  ${({ width }) =>
-    width > 800
+  ${({ width, theme }) =>
+    width > theme.widthBreakpoints.md
     ? `
     padding: 10px;
     margin: 10px;
@@ -23,8 +23,8 @@ const StyledGreenButton = styled.a`
 
   &:hover {
     cursor: pointer;
-    background-color: ${(props) =>
-      props.theme.colors.appGreenTextBackgroundColor};
+    background-color: ${({ theme }) =>
+      theme.colors.appGreenTextBackgroundColor};
   }
 `;
 
@@ -32,7 +32,7 @@ const GreenButton = ({ title = "Green Button", href = "#" }) => {
   const [width] = useWindowWidth();
 
   return (
-    <StyledGreenButton width={width} href={href} target="_blank">
+    <StyledGreenButton width={width} href={href} target="_blank" rel="noopener noreferrer">
       {title}
     </StyledGreenButton>
   );
