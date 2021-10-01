@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useWindowWidth } from "../hooks/WindowWidthContext";
 import styled from "styled-components";
 import GreenButton from "./GreenButton";
+import I18nButton from "./I18nButton";
 import HeaderButton from "./HeaderButton";
 import { FiMenu } from "react-icons/fi";
 import { MdClose } from "react-icons/md";
@@ -27,6 +28,7 @@ const StyledHeader = styled.header`
     padding-bottom: 10px;
     width: 100vw;
     height: 80px;
+    background-color: ${theme.colors.appNavyColor};
     `
         : `
     flex-direction: column-reverse;
@@ -38,12 +40,13 @@ const StyledHeader = styled.header`
       margin: 15px 0px;
     }
     button, svg, a {
-      background-color: ${theme.colors.appLightNavyColor};
+      background-color: ${theme.colors.appLightNavyColor} !important;
     }
     `};
   }
-  button {
+  .nav-button {
     color: ${(props) => props.theme.colors.appGreenColor};
+    background-color: ${(props) => props.theme.colors.appNavyColor};
     border: none;
     position: fixed;
     top: 15px;
@@ -66,7 +69,8 @@ const Header = () => {
           <HeaderButton title="Work" goTo="#work-page" />
           <HeaderButton title="Experience" goTo="#experience-page" />
           <HeaderButton title="About" goTo="#about-page" />
-          <button
+          <I18nButton />
+          <button className="nav-button"
             onClick={() => {
               setShowMenu(false);
             }}
@@ -75,7 +79,7 @@ const Header = () => {
           </button>
         </div>
       ) : (
-        <button
+        <button className="nav-button"
           onClick={() => {
             setShowMenu(true);
           }}
