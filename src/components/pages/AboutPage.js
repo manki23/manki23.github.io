@@ -97,7 +97,7 @@ const AboutPage = () => {
             anim id est laborum."
           </p>
           <p>Here are a few technologies I’ve been working with recently:</p>
-          <ul>
+          <ul className="styled-list">
             <li>Laravel</li>
             <li>Angular Ionic</li>
             <li>Javascript</li>
