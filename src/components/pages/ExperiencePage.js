@@ -1,18 +1,26 @@
 import React, { useState } from "react";
 import { useWindowWidth } from "../hooks/WindowWidthContext";
 import styled from "styled-components";
+import { useTranslation } from "react-i18next";
 
 const StyledExperiencePage = styled.div`
-  padding: 100px 0px; 
+  padding: 100px 0px;
   margin-left: ${({ width, theme }) =>
     width > theme.widthBreakpoints.lg ? `87px` : `0px`};
   .content {
-    ${({ width, theme }) => width > theme.widthBreakpoints.md ? `
+    ${({ width, theme }) =>
+      width > theme.widthBreakpoints.md
+        ? `
       display: grid;
       grid-template-columns: 1fr 3fr;
-    `: ``}
+    `
+        : ``}
     .job-tabs {
-      ${({ width, theme }) => width > theme.widthBreakpoints.md ? ``: `
+      ${({ width, theme }) =>
+        width > theme.widthBreakpoints.md
+          ? `
+          `
+          : `
         display: flex;
         overflow-x: auto;
         margin-bottom: 25px;
@@ -20,7 +28,8 @@ const StyledExperiencePage = styled.div`
       button {
         max-width: 90px;
         height: 42px;
-        min-width: ${({ width, theme }) => width > theme.widthBreakpoints.md ? `100%` : `fit-content`};
+        min-width: ${({ width, theme }) =>
+          width > theme.widthBreakpoints.md ? `100%` : `fit-content`};
         transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
         display: flex;
         -webkit-box-align: center;
@@ -30,20 +39,27 @@ const StyledExperiencePage = styled.div`
         font-family: monospace;
         font-size: 15px;
         text-align: left;
-        padding: ${({ width, theme }) => width > theme.widthBreakpoints.md ? `10px` : `10px 30px`};
-        
+        padding: ${({ width, theme }) =>
+          width > theme.widthBreakpoints.md ? `30px 10px` : `10px 30px`};
+
         cursor: pointer;
         border: 0px;
         border-radius: 0px;
-        ${({ width, theme }) => width > theme.widthBreakpoints.md ? `border-left: 2px solid` : `border-bottom: 2px solid`}
-         ${({ theme }) => theme.colors.appLightestNavyColor};
+        ${({ width, theme }) =>
+          width > theme.widthBreakpoints.md
+            ? `border-left: 2px solid`
+            : `border-bottom: 2px solid`}
+        ${({ theme }) => theme.colors.appLightestNavyColor};
       }
 
       button:hover,
       .selected {
         color: ${(props) => props.theme.colors.appGreenColor};
-        ${({ width, theme }) => width > theme.widthBreakpoints.md ? `border-left: 2px solid` : `border-bottom: 2px solid`}
-         ${({ theme }) => theme.colors.appGreenColor};
+        ${({ width, theme }) =>
+          width > theme.widthBreakpoints.md
+            ? `border-left: 2px solid`
+            : `border-bottom: 2px solid`}
+        ${({ theme }) => theme.colors.appGreenColor};
       }
 
       button:hover {
@@ -101,56 +117,42 @@ const JobContent = ({
 const ExperiencePage = () => {
   const [tab, setTab] = useState(0);
   const [width] = useWindowWidth();
+  const { t } = useTranslation();
 
   return (
     <StyledExperiencePage id="experience-page" width={width}>
-      <h2>Where I've Worked</h2>
+      <h2>{t("experiencePageTitle")}</h2>
       <div className="content">
         <div className="job-tabs">
-          <button
-            className={tab === 0 ? "selected" : ""}
-            onClick={() => setTab(0)}
-          >
-            Pongo
-          </button>
-          <button
-            className={tab === 1 ? "selected" : ""}
-            onClick={() => setTab(1)}
-          >
-            Dauphine Junior Consulting
-          </button>
-          <button
-            className={tab === 2 ? "selected" : ""}
-            onClick={() => setTab(2)}
-          >
-            Pongo Internship
-          </button>
+          {t("experiencePageJobs", { returnObjects: true }) instanceof Array &&
+            t("experiencePageJobs", { returnObjects: true }).map(({ tabName }, index) => (
+              <button
+                key={index}
+                className={tab === index ? "selected" : ""}
+                onClick={() => setTab(index)}
+              >
+                {tabName}
+              </button>
+            ))}
         </div>
         <div className="job-description">
-          <JobContent
-            content={["test", "one", "two", "three"]}
-            title="Mission fullstack Laravel"
-            companyName="Dauphine Junior Consulting"
-            companyLink="https://dauphine-junior-consulting.com/paris/"
-            timeframe="April 2021"
-            hidden={tab !== 1}
-          />
-          <JobContent
-            content={["test", "one", "two", "three"]}
-            title="Laravel Angular Ionic fullstack developper"
-            companyName="Pongo"
-            companyLink="https://www.heypongo.com/"
-            timeframe="November 2020 -  August 2021"
-            hidden={tab !== 0}
-          />
-          <JobContent
-            content={["test", "one", "two", "three"]}
-            title="Laravel backend internship"
-            companyName="Pongo"
-            companyLink="https://www.heypongo.com/"
-            timeframe="May - October 2020"
-            hidden={tab !== 2}
-          />
+          {t("experiencePageJobs", { returnObjects: true }) instanceof Array &&
+            t("experiencePageJobs", { returnObjects: true }).map(
+              (
+                { jobTitle, companyName, companyLink, timeframe, content },
+                index
+              ) => (
+                <JobContent
+                  key={index}
+                  title={jobTitle}
+                  companyName={companyName}
+                  companyLink={companyLink}
+                  timeframe={timeframe}
+                  content={content}
+                  hidden={tab !== index}
+                />
+              )
+            )}
         </div>
       </div>
     </StyledExperiencePage>

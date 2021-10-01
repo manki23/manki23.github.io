@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { useTranslation } from "react-i18next";
 
 const StyledFooter = styled.footer`
   bottom: 0;
@@ -14,16 +15,22 @@ const StyledFooter = styled.footer`
 `;
 
 const Footer = () => {
+  const { t } = useTranslation();
+
   return (
     <StyledFooter>
       <p>
-        Disclaimer: I did not create the design of this website. <br /> It was
-        inspired by{" "}
-        <a target="_blank" href="https://brittanychiang.com/" rel="noopener noreferrer">
-          Brittany Chiang portfolio
+        {t("footerDisclaimerText")} <br />
+        {t("footerInspiredByText")}{" "}
+        <a
+          target="_blank"
+          href="https://brittanychiang.com/"
+          rel="noopener noreferrer"
+        >
+          {t("footerBrittanyChiangPortfolioText")}
         </a>
         .<br />
-        If you liked this design, please check out her work.
+        {t("footerPleaseCheckHerOutText")}
       </p>
     </StyledFooter>
   );

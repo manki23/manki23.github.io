@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import img from "../../assets/manki-bitmoji.png";
 import { useWindowWidth } from "../hooks/WindowWidthContext";
+import { useTranslation } from "react-i18next";
 
 const StyledAboutPage = styled.div`
   padding: 100px 0px;
@@ -42,8 +43,10 @@ const StyledAboutPage = styled.div`
           height: auto;
           position: absolute;
           text-align: center;
-          ${({ width, theme }) => width > theme.widthBreakpoints.md ? ` `
-        : `
+          ${({ width, theme }) =>
+            width > theme.widthBreakpoints.md
+              ? ` `
+              : `
         margin-left: auto;
         margin-right: auto;
         left: 0px;
@@ -61,16 +64,22 @@ const StyledAboutPage = styled.div`
         border-radius: ${({ theme }) => theme.borderRadius};
         transition: ${({ theme }) => theme.transition};
 
-        ${({ width, theme }) => width > theme.widthBreakpoints.md ? `
+        ${({ width, theme }) =>
+          width > theme.widthBreakpoints.md
+            ? `
           border: 2px solid ${theme.colors.appGreenColor};
-        ` : ``};
+        `
+            : ``};
         top: 20px;
-        left: ${({ width, theme }) => width > theme.widthBreakpoints.md ? `20px` : `0px`};
+        left: ${({ width, theme }) =>
+          width > theme.widthBreakpoints.md ? `20px` : `0px`};
         z-index: 0;
         width: 200px;
         height: 250px;
-        ${({ width, theme }) => width > theme.widthBreakpoints.md ? ` `
-        : ` margin-left: auto; margin-right: auto; `};
+        ${({ width, theme }) =>
+          width > theme.widthBreakpoints.md
+            ? ` `
+            : ` margin-left: auto; margin-right: auto; `};
       }
     }
   }
@@ -78,30 +87,21 @@ const StyledAboutPage = styled.div`
 
 const AboutPage = () => {
   const [width] = useWindowWidth();
+  const { t } = useTranslation();
 
   return (
     <StyledAboutPage id="about-page" width={width}>
-      <h2>About me</h2>
+      <h2>{t("aboutPageTitle")}</h2>
       <div className="content">
         <div className="text-container">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
-          </p>
-          <p>
-            Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-            cupidatat non proident, sunt in culpa qui officia deserunt mollit
-            anim id est laborum."
-          </p>
-          <p>Here are a few technologies I’ve been working with recently:</p>
+          <p>{t("aboutPageParagraph1")}</p>
+          <p>{t("aboutPageParagraph2")}</p>
+          <p>{t("aboutPageTechnoListIntro")}</p>
           <ul className="styled-list">
-            <li>Laravel</li>
-            <li>Angular Ionic</li>
-            <li>Javascript</li>
-            <li>React</li>
+            {t("aboutPageTechnoList", { returnObjects: true }) instanceof Array &&
+              t("aboutPageTechnoList", { returnObjects: true }).map(
+                (text, index) => <li key={index}>{text}</li>
+              )}
           </ul>
         </div>
         <div className="picture-container">

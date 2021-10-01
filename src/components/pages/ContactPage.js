@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { BiLinkExternal } from "react-icons/bi";
 import { FaRegEnvelope } from "react-icons/fa";
 import GreenButton from "../shared/GreenButton";
+import { useTranslation } from "react-i18next";
 
 const StyledContactPage = styled.div`
     padding: 100px 0px;
@@ -14,15 +15,14 @@ const StyledContactPage = styled.div`
 `
 
 const ContactPage = () => {
+  const { t } = useTranslation();
+
   return (
     <StyledContactPage id="contact-page">
-      <h2>Get in touch</h2>
+      <h2>{t("contactPageTitle")}</h2>
       <div>
-        <p>
-          I a currently open to work, you have a project in mind or just want to
-          say hi ?
-        </p>
-        <p>Feel free to send me a message !</p>
+        <p>{t("contactPageParagraph1")}</p>
+        <p>{t("contactPageParagraph2")}</p>
         <p>
           <GreenButton
             title={

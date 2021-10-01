@@ -7,6 +7,7 @@ import HeaderButton from "./HeaderButton";
 import { FiMenu } from "react-icons/fi";
 import { MdClose } from "react-icons/md";
 import cv from "../../assets/CV_2021-09-22_Myriam_Anki.pdf";
+import { useTranslation } from "react-i18next";
 
 const StyledHeader = styled.header`
   div {
@@ -59,18 +60,20 @@ const StyledHeader = styled.header`
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [width] = useWindowWidth();
+  const { t } = useTranslation();
 
   return (
     <StyledHeader width={width}>
       {showMenu || width > 800 ? (
         <div>
-          <GreenButton title="Resume" href={cv} />
-          <HeaderButton title="Contact" goTo="#contact-page" />
-          <HeaderButton title="Work" goTo="#work-page" />
-          <HeaderButton title="Experience" goTo="#experience-page" />
-          <HeaderButton title="About" goTo="#about-page" />
+          <GreenButton title={t("resume")} href={cv} />
+          <HeaderButton title={t("contact")} goTo="#contact-page" />
+          <HeaderButton title={t("work")} goTo="#work-page" />
+          <HeaderButton title={t("experience")} goTo="#experience-page" />
+          <HeaderButton title={t("about")} goTo="#about-page" />
           <I18nButton />
-          <button className="nav-button"
+          <button
+            className="nav-button"
             onClick={() => {
               setShowMenu(false);
             }}
@@ -79,7 +82,8 @@ const Header = () => {
           </button>
         </div>
       ) : (
-        <button className="nav-button"
+        <button
+          className="nav-button"
           onClick={() => {
             setShowMenu(true);
           }}
