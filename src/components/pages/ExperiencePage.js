@@ -3,16 +3,9 @@ import { useWindowWidth } from "../hooks/WindowWidthContext";
 import styled from "styled-components";
 
 const StyledExperiencePage = styled.div`
-  padding: 100px 0px;
-  ${({ width, theme }) =>
-    console.log(
-      width > theme.widthBreakpoints.md,
-      width,
-      theme.widthBreakpoints.md
-    )}
-
+  padding: 100px 0px; 
   margin-left: ${({ width, theme }) =>
-    width > theme.widthBreakpoints.md ? `87px` : `0px`};
+    width > theme.widthBreakpoints.lg ? `87px` : `0px`};
   .content {
     ${({ width, theme }) => width > theme.widthBreakpoints.md ? `
       display: grid;
@@ -95,7 +88,7 @@ const JobContent = ({
       </h3>
       <p>{timeframe}</p>
       <div>
-        <ul>
+        <ul className="styled-list">
           {content.map((text, index) => (
             <li key={index}>{text}</li>
           ))}
