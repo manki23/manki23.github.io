@@ -24,7 +24,7 @@ const StyledGreenButton = styled.a`
   &:hover {
     cursor: pointer;
     background-color: ${({ theme }) =>
-      theme.colors.appGreenTextBackgroundColor};
+      theme.colors.appGreenTextBackgroundColor} !important;
   }
 `;
 
