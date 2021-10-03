@@ -54,9 +54,10 @@ const StyledLanguageDropDown = styled.ul`
   }
 `;
 
-const LanguageDropDown = ({ setShowDropDown }) => {
+const LanguageDropDown = ({ setShowDropDown, setLangName }) => {
   const handleOnCLick = (key) => {
     setShowDropDown(false);
+    setLangName(langs[key])
     i18n.changeLanguage(key);
   };
   return (
@@ -69,12 +70,10 @@ const LanguageDropDown = ({ setShowDropDown }) => {
 const I18nButton = () => {
   const [width] = useWindowWidth();
   const [language] = useLanguage();
+  const [langName, setLangName] = useState(langs[language]);
   const [showDropDown, setShowDropDown] = useState(false);
   const drop = React.useRef(null);
   
-  const langName = langs[language];
-
-
   function handleClick(e) {
     if (!e.target.closest(`.${drop.current?.className}`) && showDropDown) {
       setShowDropDown(false);
@@ -96,7 +95,7 @@ const I18nButton = () => {
         &nbsp;
         <RiArrowDownSLine />
       </StyledI18nButton>
-      {showDropDown && <LanguageDropDown setShowDropDown={setShowDropDown} />}
+      {showDropDown && <LanguageDropDown setShowDropDown={setShowDropDown} setLangName={setLangName} />}
     </span>
   );
 };
