@@ -38,7 +38,7 @@ const StyledHeader = styled.header`
     height: 100vh;
     background-color: ${theme.colors.appLightNavyColor};
     a {
-      margin: 15px 0px;
+      margin: 15px;
     }
     button, svg, a {
       background-color: ${theme.colors.appLightNavyColor} !important;

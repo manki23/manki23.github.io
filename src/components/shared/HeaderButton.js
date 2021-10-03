@@ -17,8 +17,7 @@ const StyledHeaderButton = styled.a`
     margin-right: 5px;
     color: ${({ theme }) => theme.colors.appGreenColor};
   }
-  ${({ width }) =>
-    width > 800
+  ${({ width, theme }) => width > theme.widthBreakpoints.header
       ? ``
       : `
         display: grid;
@@ -27,7 +26,7 @@ const StyledHeaderButton = styled.a`
 
   &:hover {
     border: 2px dashed ${({ theme }) => theme.colors.appGreenColor};
-    margin: 8px;
+    margin: ${({ width, theme }) => width > theme.widthBreakpoints.header ? `8px` : `13px`};
     color: ${({ theme }) => theme.colors.appGreenColor};
   }
 `;
