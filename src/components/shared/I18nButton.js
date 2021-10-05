@@ -14,7 +14,7 @@ const StyledI18nButton = styled.button`
   border: 1px solid ${({ theme }) => theme.colors.appGreenColor};
   background-color: ${({ theme }) => theme.colors.appNavyColor};
   border-radius: 40px;
-  padding: 0px 5px;
+  padding: 0px 7px;
   margin: 7px 7px;
   display: inline-flex;
   align-items: center;
