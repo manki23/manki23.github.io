@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import styled, { ThemeProvider } from "styled-components";
 import LeftFooter from "./components/shared/LeftFooter";
 import Header from "./components/shared/Header";
@@ -157,14 +158,16 @@ const StyledApp = styled.div`
 `;
 
 function App() {
+  const [blurContent, setBlurContent] = useState(false);
+
   return (
     <ThemeProvider theme={theme}>
       <StyledApp className="approot">
         <LanguageProvider>
           <WindowWidthProvider>
             <Logo />
-            <Header />
-            <Main />
+            <Header setBlurContent={setBlurContent} />
+            <Main blurContent={blurContent} />
             <LeftFooter />
           </WindowWidthProvider>
         </LanguageProvider>

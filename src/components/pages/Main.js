@@ -15,13 +15,14 @@ const StyledMain = styled.div`
     `0px 25px`};
   display: flex;
   flex-direction: column;
+  ${({ blurContent }) => blurContent ? `{ div { filter: blur(5px); }` : ``};
 `;
 
-const Main = () => {
+const Main = ({ blurContent = false }) => {
   const [width] = useWindowWidth();
 
   return (
-    <StyledMain width={width}>
+    <StyledMain width={width} blurContent={blurContent} >
       <HomePage />
       <AboutPage />
       <ExperiencePage />

@@ -57,10 +57,30 @@ const StyledHeader = styled.header`
   }
 `;
 
-const Header = () => {
+const Header = ({ setBlurContent }) => {
   const [showMenu, setShowMenu] = useState(false);
   const [width] = useWindowWidth();
   const { t } = useTranslation();
+  const drop = React.useRef(null);
+
+  const handleOnCLick = () => {
+    setTimeout(() => {
+      setShowMenu(false);
+      setBlurContent(false);
+    }, 250);
+  };
+
+  function handleClick(e) {
+    if (!e.target.closest(`.${drop.current?.className}`) && showMenu && !e.target.closest(`.dropdown`)) {
+      handleOnCLick();
+    }
+  }
+  React.useEffect(() => {
+    document.addEventListener("click", handleClick);
+    return () => {
+      document.removeEventListener("click", handleClick);
+    };
+  });
 
   return (
     <StyledHeader width={width}>
@@ -74,9 +94,7 @@ const Header = () => {
           <I18nButton />
           <button
             className="nav-button"
-            onClick={() => {
-              setShowMenu(false);
-            }}
+            onClick={handleOnCLick}
           >
             <MdClose />
           </button>
@@ -86,6 +104,7 @@ const Header = () => {
           className="nav-button"
           onClick={() => {
             setShowMenu(true);
+            setBlurContent(true);
           }}
         >
           <FiMenu />
