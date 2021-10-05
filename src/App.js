@@ -45,11 +45,11 @@ const theme = {
 const StyledApp = styled.div`
   * {
     box-sizing: border-box;
+    background-color: ${({ theme }) => theme.colors.appNavyColor};
   }
   display: flex;
   counter-set: headerCounter 5 h2Counter 0;
   color: ${({ theme }) => theme.colors.appWhiteColor};
-  background-color: ${({ theme }) => theme.colors.appNavyColor};
 
   a,
   button {

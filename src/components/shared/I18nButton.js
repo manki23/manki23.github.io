@@ -4,39 +4,44 @@ import { useLanguage } from "../hooks/LanguageContext";
 import { MdLanguage } from "react-icons/md";
 import { RiArrowDownSLine } from "react-icons/ri";
 
-import '../../translations/i18n';
+import "../../translations/i18n";
 import i18n from "i18next";
 import styled from "styled-components";
 
 import langs from "../../data/langs";
 
-const StyledI18nButton = styled.button`
-  border: 1px solid ${({ theme }) => theme.colors.appGreenColor};
-  background-color: ${({ theme }) => theme.colors.appNavyColor};
-  border-radius: 40px;
-  padding: 0px 7px;
-  margin: 7px 7px;
-  display: inline-flex;
-  align-items: center;
-  font-size: 1em;
-  font-family: monospace;
-  &:hover {
-    color: ${({ theme }) => theme.colors.appGreenColor};
-  }
-  svg {
-    font-size: 1.5em;
-    color: ${({ theme }) => theme.colors.appGreenColor};
-  }
-  span {
-    margin: 15px 0px;
-  }
-  ${({ width, theme }) =>
-    width > theme.widthBreakpoints.md
-      ? ` `
-      : `
+const StyledI18nSpan = styled.span`
+  button {
+    border: 1px solid ${({ theme }) => theme.colors.appGreenColor};
+    border-radius: 40px;
+    padding: 0px 7px;
+    margin: 7px 7px;
+    display: inline-flex;
+    align-items: center;
+    font-size: 1em;
+    font-family: monospace;
+    &:hover {
+      color: ${({ theme }) => theme.colors.appGreenColor};
+    }
+    svg {
+      font-size: 1.5em;
+      color: ${({ theme }) => theme.colors.appGreenColor};
+    }
+    span {
+      margin: 15px 0px;
+    }
+    ${({ width, theme }) =>
+      width > theme.widthBreakpoints.md
+        ? `
+      background-color: ${theme.colors.appNavyColor};
+      `
+        : `
       margin-left: auto !important;
       margin-right: auto !important;
+      span { background-color: ${theme.colors.appLightNavyColor}; }
     `};
+  }
+  ${({ width, theme }) => width > theme.widthBreakpoints.md ? `` : `background-color: ${theme.colors.appLightNavyColor} !important;`}
 `;
 
 const StyledLanguageDropDown = styled.ul`
@@ -57,12 +62,16 @@ const StyledLanguageDropDown = styled.ul`
 const LanguageDropDown = ({ setShowDropDown, setLangName }) => {
   const handleOnCLick = (key) => {
     setShowDropDown(false);
-    setLangName(langs[key])
+    setLangName(langs[key]);
     i18n.changeLanguage(key);
   };
   return (
     <StyledLanguageDropDown>
-      { Object.keys(langs).map((key) => <li key={key} onClick={() => handleOnCLick(key) }>{langs[key]}</li>) }
+      {Object.keys(langs).map((key) => (
+        <li key={key} onClick={() => handleOnCLick(key)}>
+          {langs[key]}
+        </li>
+      ))}
     </StyledLanguageDropDown>
   );
 };
@@ -73,7 +82,7 @@ const I18nButton = () => {
   const [langName, setLangName] = useState(langs[language]);
   const [showDropDown, setShowDropDown] = useState(false);
   const drop = React.useRef(null);
-  
+
   function handleClick(e) {
     if (!e.target.closest(`.${drop.current?.className}`) && showDropDown) {
       setShowDropDown(false);
@@ -87,16 +96,28 @@ const I18nButton = () => {
   });
 
   return (
-    <span>
-      <StyledI18nButton className="dropdown" ref={drop} width={width} onClick={() => {setShowDropDown(!showDropDown)}}>
+    <StyledI18nSpan>
+      <button
+        className="dropdown"
+        ref={drop}
+        width={width}
+        onClick={() => {
+          setShowDropDown(!showDropDown);
+        }}
+      >
         <MdLanguage />
         &nbsp;
         <span>{langName}</span>
         &nbsp;
         <RiArrowDownSLine />
-      </StyledI18nButton>
-      {showDropDown && <LanguageDropDown setShowDropDown={setShowDropDown} setLangName={setLangName} />}
-    </span>
+      </button>
+      {showDropDown && (
+        <LanguageDropDown
+          setShowDropDown={setShowDropDown}
+          setLangName={setLangName}
+        />
+      )}
+    </StyledI18nSpan>
   );
 };
 
