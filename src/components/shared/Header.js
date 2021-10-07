@@ -31,7 +31,7 @@ const StyledHeader = styled.header`
     height: 80px;
     background-color: ${theme.colors.appNavyColor};
     `
-        : `
+    : `
     flex-direction: column-reverse;
     justify-content: center;
     width: 70vw;
@@ -41,13 +41,13 @@ const StyledHeader = styled.header`
       margin: 15px;
     }
     button, svg, a {
-      background-color: ${theme.colors.appLightNavyColor} !important;
+      background-color: ${theme.colors.appLightNavyColor};
     }
     `};
   }
+  .bg-navy { background-color: ${({ theme }) => theme.colors.appNavyColor}; }
   .nav-button {
     color: ${({ theme }) => theme.colors.appGreenColor};
-    background-color: ${({ theme }) => theme.colors.appNavyColor};
     border: none;
     position: fixed;
     top: 15px;
@@ -101,7 +101,7 @@ const Header = ({ setBlurContent }) => {
         </div>
       ) : (
         <button
-          className="nav-button"
+          className="nav-button bg-navy"
           onClick={() => {
             setShowMenu(true);
             setBlurContent(true);

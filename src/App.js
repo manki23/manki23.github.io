@@ -43,10 +43,8 @@ const theme = {
 };
 
 const StyledApp = styled.div`
-  * {
-    box-sizing: border-box;
-    background-color: ${({ theme }) => theme.colors.appNavyColor};
-  }
+  & > * { background-color: ${({ theme }) => theme.colors.appNavyColor}; }
+  * { box-sizing: border-box; } 
   display: flex;
   counter-set: headerCounter 5 h2Counter 0;
   color: ${({ theme }) => theme.colors.appWhiteColor};

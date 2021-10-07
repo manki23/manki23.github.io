@@ -30,18 +30,18 @@ const StyledI18nSpan = styled.span`
     span {
       margin: 15px 0px;
     }
+
     ${({ width, theme }) =>
       width > theme.widthBreakpoints.md
-        ? `
-      background-color: ${theme.colors.appNavyColor};
+      ? `
+      & > * { background-color: ${theme.colors.appLightNavyColor}; }
       `
-        : `
+      : `
+        background-color: ${theme.colors.appNavyColor};
+      `};
       margin-left: auto !important;
       margin-right: auto !important;
-      span { background-color: ${theme.colors.appLightNavyColor}; }
-    `};
   }
-  ${({ width, theme }) => width > theme.widthBreakpoints.md ? `` : `background-color: ${theme.colors.appLightNavyColor} !important;`}
 `;
 
 const StyledLanguageDropDown = styled.ul`
