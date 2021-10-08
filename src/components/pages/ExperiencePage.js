@@ -5,8 +5,6 @@ import { useTranslation } from "react-i18next";
 
 const StyledExperiencePage = styled.div`
   padding: 100px 0px;
-  margin-left: ${({ width, theme }) =>
-    width > theme.widthBreakpoints.lg ? `87px` : `0px`};
   .content {
     ${({ width, theme }) =>
       width > theme.widthBreakpoints.md
