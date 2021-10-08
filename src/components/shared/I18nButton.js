@@ -78,7 +78,8 @@ const LanguageDropDown = ({ setShowDropDown, setLangName }) => {
 
 const I18nButton = () => {
   const [width] = useWindowWidth();
-  const [language] = useLanguage();
+  let [language] = useLanguage();
+  language = language.split('-')[0];
   const [langName, setLangName] = useState(langs[language]);
   const [showDropDown, setShowDropDown] = useState(false);
   const drop = React.useRef(null);
