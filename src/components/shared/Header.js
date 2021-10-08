@@ -45,13 +45,13 @@ const StyledHeader = styled.header`
     }
     `};
   }
-  .bg-navy { background-color: ${({ theme }) => theme.colors.appNavyColor}; }
   .nav-button {
     color: ${({ theme }) => theme.colors.appGreenColor};
+    background-color: transparent;
     border: none;
     position: fixed;
-    top: 15px;
-    right: 15px;
+    top: 10px;
+    right: 10px;
     font-size: 40px;
     visibility: ${({ width, theme }) => (width > theme.widthBreakpoints.header ? "hidden" : "visible")};
   }
@@ -101,7 +101,7 @@ const Header = ({ setBlurContent }) => {
         </div>
       ) : (
         <button
-          className="nav-button bg-navy"
+          className="nav-button"
           onClick={() => {
             setShowMenu(true);
             setBlurContent(true);
