@@ -94,11 +94,14 @@ const AboutPage = () => {
       <h2>{t("aboutPageTitle")}</h2>
       <div className="content">
         <div className="text-container">
-          <p>{t("aboutPageParagraph1")}</p>
-          <p>{t("aboutPageParagraph2")}</p>
+          {t("aboutPageParagraphs", { returnObjects: true }) instanceof Array &&
+            t("aboutPageParagraphs", { returnObjects: true }).map(
+              (text, index) => <p key={index}>{text}</p>
+            )}
           <p>{t("aboutPageTechnoListIntro")}</p>
           <ul className="styled-list">
-            {t("aboutPageTechnoList", { returnObjects: true }) instanceof Array &&
+            {t("aboutPageTechnoList", { returnObjects: true }) instanceof
+              Array &&
               t("aboutPageTechnoList", { returnObjects: true }).map(
                 (text, index) => <li key={index}>{text}</li>
               )}
