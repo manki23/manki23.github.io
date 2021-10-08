@@ -23,7 +23,7 @@ const StyledHomePage = styled.div`
 
   #title-name,
   #title-whoami {
-    font-size: clamp(40px, 8vw, 80px);
+    font-size: 6vw;
     font-weight: bold;
   }
 

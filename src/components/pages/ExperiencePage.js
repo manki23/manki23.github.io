@@ -25,7 +25,7 @@ const StyledExperiencePage = styled.div`
       `}
       button {
         max-width: 90px;
-        height: 42px;
+        min-height: 42px;
         min-width: ${({ width, theme }) =>
           width > theme.widthBreakpoints.md ? `100%` : `fit-content`};
         transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -38,7 +38,7 @@ const StyledExperiencePage = styled.div`
         font-size: 15px;
         text-align: left;
         padding: ${({ width, theme }) =>
-          width > theme.widthBreakpoints.md ? `30px 10px` : `10px 30px`};
+          width > theme.widthBreakpoints.md ? `20px 10px` : `10px 20px`};
 
         cursor: pointer;
         border: 0px;
