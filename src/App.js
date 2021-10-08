@@ -46,7 +46,7 @@ const StyledApp = styled.div`
   & > * { background-color: ${({ theme }) => theme.colors.appNavyColor}; }
   * { box-sizing: border-box; } 
   display: flex;
-  counter-set: headerCounter 5 h2Counter 0;
+  counter-reset: headerCounter 5 h2Counter 0;
   color: ${({ theme }) => theme.colors.appWhiteColor};
 
   a,
