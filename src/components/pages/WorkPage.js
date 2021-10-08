@@ -12,7 +12,7 @@ const WorkPage = () => {
   return (
     <StyledWorkPage id="work-page">
       <h2>{t("workPageTitle")}</h2>
-      <div>{t("workPageWip")}</div>
+      <p>{t("workPageWip")}</p>
     </StyledWorkPage>
   );
 };
