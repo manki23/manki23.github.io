@@ -7,6 +7,7 @@ import ExperiencePage from "./ExperiencePage";
 import WorkPage from "./WorkPage";
 import ContactPage from "./ContactPage";
 import Footer from "../shared/Footer";
+import ChatComponent from "../ChatComponent/ChatComponent";
 
 const StyledMain = styled.div`
   padding: ${({ width, theme }) =>
@@ -28,6 +29,7 @@ const Main = ({ blurContent = false }) => {
       <ExperiencePage />
       <WorkPage />
       <ContactPage />
+      <ChatComponent />
       <Footer />
     </StyledMain>
   );
