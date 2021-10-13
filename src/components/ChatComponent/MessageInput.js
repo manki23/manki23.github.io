@@ -38,16 +38,16 @@ const MessageInput = ({ setClientMessages }) => (
     <form
       onSubmit={(e) => {
         e.preventDefault();
-        console.log(e.target.textMessage.value);
+        const newText = e.target.textMessage.value;
         setClientMessages((prev = []) => {
-          prev.push(e.target.textMessage.value);
-          console.log(prev);
-          return prev;
+          const newArray = [...prev];
+          newArray.push(newText);
+          e.target.textMessage.value = "";
+          return [...newArray];
         });
-        e.target.textMessage.value = "";
       }}
     >
-      <textarea type="text" id="textMessage" name="textMessage" />
+      <textarea type="text" id="textMessage" name="textMessage" minLength="3"/>
       <button type="submit">
         <MdSend />
       </button>

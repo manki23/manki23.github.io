@@ -25,16 +25,20 @@ const StyledContent = styled.div`
   border: 2px solid yellow;
   height: 80%;
   padding: 10px 0px;
+  overflow: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column-reverse;
 `;
 
 const Content = ({ clientMessages = [], myMessages = [] }) => (
   <StyledContent>
-    <LeftMessage text={myMessages[0]} />
-    {clientMessages.map((text, index) => (
+    {[...clientMessages].reverse().map((text, index) => (
       <div key={index}>
         <RightMessage text={text} />
       </div>
     ))}
+    <LeftMessage text={myMessages[0]} />
   </StyledContent>
 );
 
@@ -54,11 +58,13 @@ const StyledChatComponent = styled.div`
 
 const ChatComponent = () => {
   const myMessages = ["Coucou"];
-  const [clientMessages, setClientMessages] = useState(["this is a test", "again"]);
+  const [clientMessages, setClientMessages] = useState([
+    "this is a test",
+    "again",
+  ]);
   return (
     <StyledChatComponent>
       <ChatHeader />
-      {clientMessages.map((text, index) => text)}
       <Content clientMessages={clientMessages} myMessages={myMessages} />
       <MessageInput setClientMessages={setClientMessages} />
     </StyledChatComponent>
