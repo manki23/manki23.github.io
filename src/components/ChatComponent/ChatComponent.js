@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { MdClose } from "react-icons/md";
 import MessageInput from "./MessageInput";
-import { LeftMessage, RightMessage } from "./MessageComponent";
+import MessageComponent from "./MessageComponent";
 
 const StyledChatHeader = styled.div`
   border: 2px solid blue;
@@ -35,10 +35,10 @@ const Content = ({ clientMessages = [], myMessages = [] }) => (
   <StyledContent>
     {[...clientMessages].reverse().map((text, index) => (
       <div key={index}>
-        <RightMessage text={text} />
+        <MessageComponent text={text} />
       </div>
     ))}
-    <LeftMessage text={myMessages[0]} />
+    <MessageComponent direction="left" text={myMessages[0]} />
   </StyledContent>
 );
 

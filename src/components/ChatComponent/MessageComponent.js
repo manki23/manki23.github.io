@@ -1,18 +1,27 @@
 import React from "react";
 import styled from "styled-components";
 
-const StyledRightMessage = styled.div`
+const StyledMessage = styled.div`
   & {
     position: relative;
+    white-space: pre-line; // This line is to keep \n
+    margin-left: ${({ direction }) =>
+      direction === "right" ? `calc(100% - 220px)` : `20px`};
     margin-bottom: 10px;
-    margin-left: calc(100% - 220px);
     padding: 10px;
-    background-color: ${({ theme }) => theme.colors.appLightNavyColor};
+    background-color: ${({ direction, theme }) =>
+      direction === "right"
+        ? theme.colors.appLightNavyColor
+        : theme.colors.appLightSlateColor};
     width: 200px;
-    height: 50px;
     text-align: left;
-    font: 400 0.9em "Open Sans", sans-serif;
-    border: 1px solid ${({ theme }) => theme.colors.appNavyColor};
+    font-size: ${({ theme }) => theme.fontSize.sm} !important;
+    font-family: ${({ theme }) => theme.fontMono};
+    border: 1px solid
+      ${({ direction, theme }) =>
+        direction === "right"
+          ? theme.colors.appNavyColor
+          : theme.colors.appLightestSlateColor};
     border-radius: 10px;
   }
   &:after {
@@ -20,66 +29,36 @@ const StyledRightMessage = styled.div`
     position: absolute;
     width: 0;
     height: 0;
-    border-bottom: 15px solid ${({ theme }) => theme.colors.appLightNavyColor};
+    ${({ direction, theme }) =>
+      direction === "right"
+        ? ` border-bottom: 15px solid ${theme.colors.appLightNavyColor}; `
+        : ` border-top: 15px solid ${theme.colors.appLightSlateColor}; `}
     border-left: 15px solid transparent;
     border-right: 15px solid transparent;
-    bottom: 0;
-    right: -15px;
+    ${({ direction }) => (direction === "right" ? `bottom: 0px;` : `top: 0px;`)}
+    ${({ direction }) =>
+      direction === "right" ? `right: -15px;` : `left: -15px;`}
   }
   &:before {
     content: "";
     position: absolute;
     width: 0;
     height: 0;
-    border-bottom: 17px solid ${({ theme }) => theme.colors.appNavyColor};
+    ${({ direction, theme }) =>
+      direction === "right"
+      ? ` border-bottom: 17px solid ${theme.colors.appNavyColor}; `
+      : ` border-top: 17px solid ${theme.colors.appLightestSlateColor}; `}
     border-left: 16px solid transparent;
     border-right: 16px solid transparent;
-    bottom: -1px;
-    right: -17px;
+    ${({ direction }) =>
+      direction === "right" ? `bottom: -1px;` : `top: -1px;`}
+    ${({ direction }) =>
+      direction === "right" ? `right: -17px;` : `left: -17px;`}
   }
-`;
+`
 
-export const RightMessage = ({ text = "" }) => (
-  <StyledRightMessage>{text}</StyledRightMessage>
+const MessageComponent = ({ text = "", direction = "right" }) => (
+  <StyledMessage direction={direction}>{text}</StyledMessage>
 );
 
-const StyledLeftMessage = styled.div`
-  & {
-    position: relative;
-    margin-left: 20px;
-    margin-bottom: 10px;
-    padding: 10px;
-    background-color: ${({ theme }) => theme.colors.appLightSlateColor};
-    width: 200px;
-    height: 50px;
-    text-align: left;
-    font: 400 0.9em "Open Sans", sans-serif;
-    border: 1px solid ${({ theme }) => theme.colors.appLightestSlateColor};
-    border-radius: 10px;
-  }
-  &:after {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-top: 15px solid ${({ theme }) => theme.colors.appLightSlateColor};
-    border-left: 15px solid transparent;
-    border-right: 15px solid transparent;
-    top: 0;
-    left: -15px;
-  }
-  &:before {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-top: 17px solid ${({ theme }) => theme.colors.appLightestSlateColor};
-    border-left: 16px solid transparent;
-    border-right: 16px solid transparent;
-    top: -1px;
-    left: -17px;
-  }
-`;
-
-export const LeftMessage = ({ text }) => <StyledLeftMessage>{text}</StyledLeftMessage>;
-
+export default MessageComponent;
