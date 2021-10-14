@@ -21,6 +21,7 @@ const StyledChatHeader = styled.div`
       margin: 4px 10px 4px 5px;
     }
     button > svg {
+        font-size: 30px;
       position: sticky;
       color: ${({ theme }) => theme.colors.appGreenColor};
     }
@@ -36,14 +37,14 @@ const StyledChatHeader = styled.div`
   }
 `;
 
-const ChatHeader = () => {
+const ChatHeader = ({ setShowChat}) => {
   return (
     <StyledChatHeader>
       <div>
         <img src={logo} alt="Logo" />
         Myriam
       </div>
-      <button>
+      <button onClick={() => setShowChat(false)}>
         <MdClose />
       </button>
     </StyledChatHeader>
