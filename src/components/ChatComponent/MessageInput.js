@@ -11,6 +11,7 @@ const StyledMessageInput = styled.div`
     overflow: auto;
     outline: none;
     resize: none;
+    padding: 5px;
     border-radius: 4px;
     background-color: ${({ theme }) => theme.colors.appLightestSlateColor};
     color: ${({ theme }) => theme.colors.appLightNavyColor};
