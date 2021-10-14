@@ -4,6 +4,7 @@ import { MdSend } from "react-icons/md";
 
 const StyledMessageInput = styled.div`
   height: 12%;
+  background-color: ${({ theme }) => theme.colors.appLightestSlateColor};
   form > textarea {
     width: 90%;
     border: none;
@@ -22,8 +23,17 @@ const StyledMessageInput = styled.div`
     font: inherit;
     cursor: pointer;
     outline: inherit;
+
+    background-color: ${({ theme }) => theme.colors.appLightestNavyColor};
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin: 0px 5px;
+    display: flex;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
     svg {
-      margin: 0px 0px 0px 10px;
       color: ${({ theme }) => theme.colors.appGreenColor};
     }
   }
@@ -47,7 +57,7 @@ const MessageInput = ({ setClientMessages }) => (
         });
       }}
     >
-      <textarea type="text" id="textMessage" name="textMessage" minLength="3"/>
+      <textarea type="text" id="textMessage" name="textMessage" minLength="3" />
       <button type="submit">
         <MdSend />
       </button>
