@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { MdSend } from "react-icons/md";
 
 const StyledMessageInput = styled.div`
-  border: 2px solid green;
   height: 12%;
   form > textarea {
     width: 90%;
@@ -13,6 +12,7 @@ const StyledMessageInput = styled.div`
     resize: none;
     border-radius: 4px;
     background-color: ${({ theme }) => theme.colors.appLightestSlateColor};
+    color: ${({ theme }) => theme.colors.appLightNavyColor};
   }
   form > button {
     background: none;

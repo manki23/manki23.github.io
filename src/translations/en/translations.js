@@ -21,7 +21,11 @@ const TRANSLATIONS_EN = {
   ],
   aboutPageTechnoListIntro:
     "Here are a few technologies I’ve been working with recently:",
-    aboutPageTechnoList: ["Laravel (PHP)", "Angular Ionic (Typescript)", "React (Javascript)"],
+  aboutPageTechnoList: [
+    "Laravel (PHP)",
+    "Angular Ionic (Typescript)",
+    "React (Javascript)",
+  ],
 
   // EXPERIENCEPAGE TEXTS
   experiencePageTitle: "Where I've Worked",
@@ -91,6 +95,10 @@ const TRANSLATIONS_EN = {
   footerBrittanyChiangPortfolioText: "Brittany Chiang portfolio",
   footerPleaseCheckHerOutText:
     "If you liked this design, please check out her work.",
+
+  // CHAT SECTION
+  hiMessage:
+    "Hi there !\nFeel free to leave me a message and don't forget to leave your contact informations so I can get back to you :)",
 };
 
 export default TRANSLATIONS_EN;
