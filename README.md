@@ -1,7 +1,7 @@
 # React portfolio
 
 ## 1. Introduction
-I build this project with pure react.
+I built this project with pure react.
 
 Styles were made using styled-components.
 
