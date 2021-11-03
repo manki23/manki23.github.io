@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { MdSend } from "react-icons/md";
+import axios from 'axios';
 
 const StyledMessageInput = styled.div`
   height: 12%;
@@ -44,26 +45,64 @@ const StyledMessageInput = styled.div`
   }
 `;
 
-const MessageInput = ({ setClientMessages }) => (
-  <StyledMessageInput>
-    <form
-      onSubmit={(e) => {
-        e.preventDefault();
-        const newText = e.target.textMessage.value;
-        setClientMessages((prev = []) => {
-          const newArray = [...prev];
-          newArray.push(newText);
-          e.target.textMessage.value = "";
-          return [...newArray];
+const MessageInput = ({ setClientMessages }) => {
+  const [text, setText] = useState('');
+  const [response, setResponse] = useState(null);
+  const [error, setError] = useState(null);
+  const [loading, setloading] = useState(false);
+  axios.defaults.baseURL = process.env.REACT_APP_CHAT_API_URL;
+  axios.defaults.headers.post['Content-Type'] = 'application/json';
+  axios.defaults.headers.post['Accept'] = 'application/json';
+
+  useEffect(() => {
+    if (text !== '') {
+      setloading(true);
+      axios.post('/messages', JSON.stringify({text: text}))
+        .then((res) => {
+          setResponse(res.data);
+        })
+        .catch((err) => {
+          setError(err);
+        })
+        .finally(() => {
+          setloading(false);
         });
-      }}
-    >
-      <textarea type="text" id="textMessage" name="textMessage" minLength="3" />
-      <button type="submit">
-        <MdSend />
-      </button>
-    </form>
-  </StyledMessageInput>
-);
+      console.log(response, loading, error);
+    }
+    return () => {
+      setText('');
+      setloading(false);
+      setResponse(null);
+      setError(null);
+    }
+  }, [text]);
+
+  const manageOnSubmit = (e) => {
+    e.preventDefault();
+    const newText = e.target.textMessage.value;
+
+    if (newText !== '') {
+      setText(newText);
+      console.log(newText, text);
+      setClientMessages((prev = []) => {
+        const newArray = [...prev];
+        newArray.push(newText);
+        e.target.textMessage.value = "";
+        return [...newArray];
+      });
+    }
+  }
+
+  return (
+    <StyledMessageInput>
+      <form onSubmit={manageOnSubmit} >
+        <textarea type="text" id="textMessage" name="textMessage" minLength="3" />
+        <button type="submit">
+          <MdSend />
+        </button>
+      </form>
+    </StyledMessageInput>
+  );
+}
 
 export default MessageInput;
