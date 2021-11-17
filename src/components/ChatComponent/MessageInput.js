@@ -55,7 +55,7 @@ const MessageInput = ({ setClientMessages }) => {
   axios.defaults.headers.post['Accept'] = 'application/json';
 
   useEffect(() => {
-    if (text !== '') {
+    if (text !== '' && process.env.REACT_APP_DEV_MODE === 'false') {
       setloading(true);
       axios.post('/messages', JSON.stringify({text: text}))
         .then((res) => {
@@ -96,7 +96,7 @@ const MessageInput = ({ setClientMessages }) => {
   return (
     <StyledMessageInput>
       <form onSubmit={manageOnSubmit} >
-        <textarea type="text" id="textMessage" name="textMessage" minLength="3" />
+        <textarea type="text" id="textMessage" name="textMessage" minLength="10" />
         <button type="submit">
           <MdSend />
         </button>
