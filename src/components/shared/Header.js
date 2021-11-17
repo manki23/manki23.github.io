@@ -6,7 +6,8 @@ import I18nButton from "./I18nButton";
 import HeaderButton from "./HeaderButton";
 import { FiMenu } from "react-icons/fi";
 import { MdClose } from "react-icons/md";
-import cv from "../../assets/CV_2021-09-22_Myriam_Anki.pdf";
+import cv_fr from "../../assets/2021-11-04_CV_Myriam_Anki_fr.pdf";
+import cv_en from "../../assets/2021-11-04_CV_Myriam_Anki_en.pdf";
 import { useTranslation } from "react-i18next";
 
 const StyledHeader = styled.header`
@@ -86,7 +87,7 @@ const Header = ({ setBlurContent }) => {
     <StyledHeader width={width}>
       {showMenu || width > 900 ? (
         <div>
-          <GreenButton title={t("resume")} href={cv} />
+          <GreenButton title={t("resume")} href={cv_en} />
           <HeaderButton title={t("contact")} goTo="#contact-page" />
           <HeaderButton title={t("work")} goTo="#work-page" />
           <HeaderButton title={t("experience")} goTo="#experience-page" />

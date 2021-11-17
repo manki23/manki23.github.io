@@ -17,11 +17,15 @@ const TRANSLATIONS_EN = {
   aboutPageTitle: "About me",
   aboutPageParagraphs: [
     "Hello! I'm Myriam, a passionate spirit aspiring to contribute to the creation of great tools that improve the lives of those around me.",
-    "Student at 42, I worked a year as a fullstack developer at Pongo ...",
+    "After a first year of experience as a Fullstack web developer, I am looking for a Freelance mission for January 2022.",
   ],
   aboutPageTechnoListIntro:
     "Here are a few technologies I’ve been working with recently:",
-    aboutPageTechnoList: ["Laravel (PHP)", "Angular Ionic (Typescript)", "React (Javascript)"],
+  aboutPageTechnoList: [
+    "Laravel (PHP)",
+    "Angular Ionic (Typescript)",
+    "React (Javascript)",
+  ],
 
   // EXPERIENCEPAGE TEXTS
   experiencePageTitle: "Where I've Worked",
@@ -91,6 +95,10 @@ const TRANSLATIONS_EN = {
   footerBrittanyChiangPortfolioText: "Brittany Chiang portfolio",
   footerPleaseCheckHerOutText:
     "If you liked this design, please check out her work.",
+
+  // CHAT SECTION
+  hiMessage:
+    "Hi there !\nFeel free to leave me a message and don't forget to leave your contact informations so I can get back to you :)",
 };
 
 export default TRANSLATIONS_EN;

@@ -7,7 +7,7 @@ const TRANSLATIONS_FR = {
   resume: "CV",
 
   // HOMEPAGE TEXTS
-  homePagePreTitle: "Coucou, moi c'est",
+  homePagePreTitle: "Salut, moi c'est",
   homePageFullName: "Myriam Anki",
   homePageWhoami: "Je suis developpeuse freelance",
   homePageSmallIntro:
@@ -17,11 +17,15 @@ const TRANSLATIONS_FR = {
   aboutPageTitle: "À propos de moi",
   aboutPageParagraphs: [
     "Coucou ! Moi c'est Myriam, je suis un esprit passioné qui aspire à contribuer à la création d'excellents outils qui améliorent la vie de ceux qui m'entourent.",
-    "Étudiante à 42, j'ai travaillé un an en tant que developpeuse fullstack chez Pongo ... ",
+    "Après une première année d'expérience en tant que développeuse web Fullstack, je suis à la recherche d'une mission Freelance pour janvier 2022.",
   ],
   aboutPageTechnoListIntro:
     "Voici quelques technologies avec lesquelles j'ai travaillé récemment :",
-  aboutPageTechnoList: ["Laravel (PHP)", "Angular Ionic (Typescript)", "React (Javascript)"],
+  aboutPageTechnoList: [
+    "Laravel (PHP)",
+    "Angular Ionic (Typescript)",
+    "React (Javascript)",
+  ],
 
   // EXPERIENCEPAGE TEXTS
   experiencePageTitle: "Où j'ai travaillé",
@@ -90,6 +94,10 @@ const TRANSLATIONS_FR = {
   footerBrittanyChiangPortfolioText: "portfolio de Brittany Chiang",
   footerPleaseCheckHerOutText:
     "Si vous avez aimé ce design, n'hésitez pas à aller voir son travail.",
+
+  // CHAT SECTION
+  hiMessage:
+    "Salutations !\nN'hésitez pas à me laisser un message et n'oubliez pas de laisser vos coordonnées pour que je puisse vous recontacter :)",
 };
 
 export default TRANSLATIONS_FR;

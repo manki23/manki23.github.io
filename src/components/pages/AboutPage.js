@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import img from "../../assets/manki-bitmoji.png";
+import img from "../../assets/medium_manki.jpg";
 import { useWindowWidth } from "../hooks/WindowWidthContext";
 import { useTranslation } from "react-i18next";
 
@@ -41,6 +41,7 @@ const StyledAboutPage = styled.div`
           resize: none;
           width: auto;
           height: auto;
+          max-height: 250px;
           position: absolute;
           text-align: center;
           ${({ width, theme }) =>
