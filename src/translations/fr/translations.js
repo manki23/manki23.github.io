@@ -16,7 +16,7 @@ const TRANSLATIONS_FR = {
   // ABOUTPAGE TEXTS
   aboutPageTitle: "À propos de moi",
   aboutPageParagraphs: [
-    "Coucou ! Moi c'est Myriam, je suis un esprit passioné qui aspire à contribuer à la création d'excellents outils qui améliorent la vie de ceux qui m'entourent.",
+    "Salut ! Moi c'est Myriam, je suis un esprit passioné qui aspire à contribuer à la création d'excellents outils qui améliorent la vie de ceux qui m'entourent.",
     "Après une première année d'expérience en tant que développeuse web Fullstack, je suis à la recherche d'une mission Freelance pour janvier 2022.",
   ],
   aboutPageTechnoListIntro:
