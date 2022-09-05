@@ -9,27 +9,43 @@ const TRANSLATIONS_EN = {
   // HOMEPAGE TEXTS
   homePagePreTitle: "Hi, my name is ",
   homePageFullName: "Myriam Anki",
-  homePageWhoami: "I am a freelance developper",
+  homePageWhoami: "I am a student at 42Paris",
   homePageSmallIntro:
-    "I am a Laravel backend developper with some frontend skills in React.",
+    "I was a web fullstack developper in Laravel Angular Ionic, now I am exploring new horizons.",
 
   // ABOUTPAGE TEXTS
   aboutPageTitle: "About me",
   aboutPageParagraphs: [
-    "Hello! I'm Myriam, a passionate spirit aspiring to contribute to the creation of great tools that improve the lives of those around me.",
-    "After a first year of experience as a Fullstack web developer, I am looking for a Freelance mission for January 2022.",
+    "Hello! I'm Myriam, a passionate spirit with a strong desire to learn. I aspire to contribute to the creation of great tools that will help improve the lives of those around me.",
+    "After almost two years of experience as a Fullstack web developer, I decided to go back to school to learn more about the other fields in computer science.",
+    "I am currently doing projects at 42Paris to learn more about security, data, algorithm, machine learning... I am looking for a 6-months internship for February 2023.",
   ],
   aboutPageTechnoListIntro:
-    "Here are a few technologies I’ve been working with recently:",
+    "Here are a few technologies I’ve been working with:",
   aboutPageTechnoList: [
     "Laravel (PHP)",
     "Angular Ionic (Typescript)",
     "React (Javascript)",
+    "Python3",
+    "C",
+    "SQL",
   ],
 
   // EXPERIENCEPAGE TEXTS
   experiencePageTitle: "Where I've Worked",
   experiencePageJobs: [
+    {
+      tabName: "Audika Group",
+      jobTitle: "Freelance - Misc dev on ERP in PHP",
+      companyName: "Audika Group",
+      companyLink: "https://www.audika.fr/",
+      timeframe: "January 2022 -  March 2022",
+      content: [
+        "Writing and modifying SQL requests",
+        "Creation of new features on the ERP in PHP",
+        "Debug",
+      ],
+    },
     {
       tabName: "Pongo",
       jobTitle: "Laravel Angular Ionic fullstack developper",

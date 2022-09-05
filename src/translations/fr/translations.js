@@ -9,27 +9,43 @@ const TRANSLATIONS_FR = {
   // HOMEPAGE TEXTS
   homePagePreTitle: "Salut, moi c'est",
   homePageFullName: "Myriam Anki",
-  homePageWhoami: "Je suis developpeuse freelance",
+  homePageWhoami: "Je suis étudiante à 42Paris",
   homePageSmallIntro:
-    "Je suis dev fullstack profilé backend sur Laravel. Côté front, je code sur React en ce moment.",
+    "J'étais dev fullstack web Laravel Angular Ionic, maintenant j'explore de nouveaux horizons.",
 
   // ABOUTPAGE TEXTS
   aboutPageTitle: "À propos de moi",
   aboutPageParagraphs: [
-    "Salut ! Moi c'est Myriam, je suis un esprit passionné qui aspire à contribuer à la création d'excellents outils qui améliorent la vie de ceux qui m'entourent.",
-    "Après une première année d'expérience en tant que développeuse web Fullstack, je suis à la recherche d'une mission Freelance pour janvier 2022.",
+    "Salut ! Moi c'est Myriam, je suis un esprit passionné avec une forte envie d'apprendre. J'aspire à contribuer à la création d'excellents outils qui aideront à améliorer la vie de ceux qui m'entourent.",
+    "Après presque deux ans d'expérience en tant que développeuse web Fullstack, j'ai décidé de retourner à l'école pour en apprendre d'avantage sur les autres domaines de l'informatique.",
+    "Actuellement, je réalise des projets à 42Paris pour en apprendre plus sur la sécurité, la data, l'algorithmique, le machine learning... Je suis à la recherche d'un stage de 6 mois pour Février 2023.",
   ],
   aboutPageTechnoListIntro:
-    "Voici quelques technologies avec lesquelles j'ai travaillé récemment :",
+    "Voici quelques technologies avec lesquelles j'ai travaillé :",
   aboutPageTechnoList: [
     "Laravel (PHP)",
     "Angular Ionic (Typescript)",
     "React (Javascript)",
+    "Python3",
+    "C",
+    "SQL",
   ],
 
   // EXPERIENCEPAGE TEXTS
   experiencePageTitle: "Où j'ai travaillé",
   experiencePageJobs: [
+    {
+      tabName: "Audika Group",
+      jobTitle: "Mission Freelance - Développements divers sur ERP en PHP",
+      companyName: "Audika Group",
+      companyLink: "https://www.audika.fr/",
+      timeframe: "Janvier 2022 -  Mars 2022",
+      content: [
+        "Écriture et modification de requêtes SQL",
+        "Création de nouvelles fonctionnalités sur l'ERP (en PHP)",
+        "Débogue",
+      ],
+    },
     {
       tabName: "Pongo",
       jobTitle: "Développeuse fullstack Laravel Angular Ionic",
