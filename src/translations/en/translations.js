@@ -89,7 +89,7 @@ const TRANSLATIONS_EN = {
         "Separated code into domains",
         "Changed the database structure",
         "Wrote API documentation with Swagger first, then with Postman",
-        "Writing Postman test scripts",
+        "Wrote Postman test scripts",
       ],
     },
   ],
