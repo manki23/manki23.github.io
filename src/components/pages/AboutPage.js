@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import img from "../../assets/medium_manki.jpg";
+import img from "../../assets/myriam_profile.PNG";
 import { useWindowWidth } from "../hooks/WindowWidthContext";
 import { useTranslation } from "react-i18next";
 
@@ -53,7 +53,6 @@ const StyledAboutPage = styled.div`
         left: 0px;
         right: 0px;
       `};
-          background-color: ${({ theme }) => theme.colors.appLightSlateColor};
           border-radius: ${({ theme }) => theme.borderRadius};
           z-index: 1;
         }
@@ -65,12 +64,6 @@ const StyledAboutPage = styled.div`
         border-radius: ${({ theme }) => theme.borderRadius};
         transition: ${({ theme }) => theme.transition};
 
-        ${({ width, theme }) =>
-          width > theme.widthBreakpoints.md
-            ? `
-          border: 2px solid ${theme.colors.appGreenColor};
-        `
-            : ``};
         top: 20px;
         left: ${({ width, theme }) =>
           width > theme.widthBreakpoints.md ? `20px` : `0px`};
