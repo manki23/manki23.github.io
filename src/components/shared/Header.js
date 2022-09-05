@@ -6,8 +6,7 @@ import I18nButton from "./I18nButton";
 import HeaderButton from "./HeaderButton";
 import { FiMenu } from "react-icons/fi";
 import { MdClose } from "react-icons/md";
-import cv_fr from "../../assets/2021-11-04_CV_Myriam_Anki_fr.pdf";
-import cv_en from "../../assets/2021-11-04_CV_Myriam_Anki_en.pdf";
+import cv_en from "../../assets/CV_2022-09-05_Myriam_Anki_en.pdf";
 import { useTranslation } from "react-i18next";
 
 const StyledHeader = styled.header`
