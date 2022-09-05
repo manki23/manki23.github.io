@@ -51,7 +51,7 @@ const TRANSLATIONS_FR = {
       jobTitle: "Développeuse fullstack Laravel Angular Ionic",
       companyName: "Pongo",
       companyLink: "https://www.heypongo.com/",
-      timeframe: "Novembre 2020 -  Août 2021",
+      timeframe: "Novembre 2020 -  Juin 2021",
       content: [
         "Débogue général de l'application tablette, ajouts de pages et d'options",
         "Gestion de la perte de paquets sur des connexions wifi instable",
